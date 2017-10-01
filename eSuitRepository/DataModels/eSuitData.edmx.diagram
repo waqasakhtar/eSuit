@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8154ee5085f844938edcb094326c6afc" Name="Diagram1">
+        <EntityTypeShape EntityType="eSuiteModel.SECURITY_MenuAccess" Width="1.5" PointX="5.25" PointY="25.625" />
+        <EntityTypeShape EntityType="eSuiteModel.SECURITY_User" Width="1.5" PointX="5.25" PointY="35.25" />
+        <EntityTypeShape EntityType="eSuiteModel.SECURITY_UserGroup" Width="1.5" PointX="3" PointY="45.625" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_City" Width="1.5" PointX="5.25" PointY="40.125" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_Company" Width="1.5" PointX="0.75" PointY="25.875" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_Country" Width="1.5" PointX="3" PointY="52.625" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_Customer" Width="1.5" PointX="10.5" PointY="39.875" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_CustomerDlvryAdd" Width="1.5" PointX="12.75" PointY="33.375" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_CustomerType" Width="1.5" PointX="3" PointY="49.125" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_Department" Width="1.5" PointX="3" PointY="12.125" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_Location" Width="1.5" PointX="3" PointY="32.25" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_ProductGroup" Width="1.5" PointX="3" PointY="24.125" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_SalesArea" Width="1.5" PointX="3" PointY="42" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_SalesAreaDetail" Width="1.5" PointX="7.5" PointY="41.5" />
+        <EntityTypeShape EntityType="eSuiteModel.SETUP_Unit" Width="1.5" PointX="3" PointY="56.5" />
+        <EntityTypeShape EntityType="eSuiteModel.SYS_Menu" Width="1.5" PointX="3" PointY="20.25" />
+        <EntityTypeShape EntityType="eSuiteModel.SYS_Parameter" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyMenuAccess" />
+        <AssociationConnector Association="eSuiteModel.FK_MenuMenuAccess" />
+        <AssociationConnector Association="eSuiteModel.FK_UserMenuAccess" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyUser" />
+        <AssociationConnector Association="eSuiteModel.FK_UserGroupUser" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyUserGroup" />
+        <AssociationConnector Association="eSuiteModel.FK_CityCustomer" />
+        <AssociationConnector Association="eSuiteModel.FK_CitySalesAreaDetail" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyCity" />
+        <AssociationConnector Association="eSuiteModel.FK_CountryCity" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyCountry" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyCustomer" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyCustomerDlvryAdd" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyCustomerType" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyDepartment" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyLocation" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyMenu" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyProductGroup" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanySalesArea" />
+        <AssociationConnector Association="eSuiteModel.FK_CompanyUnit" />
+        <AssociationConnector Association="eSuiteModel.FK_CountryCustomer" />
+        <AssociationConnector Association="eSuiteModel.FK_CstCustomerDlvryAdd" />
+        <AssociationConnector Association="eSuiteModel.FK_CstTypeCustomer" />
+        <AssociationConnector Association="eSuiteModel.FK_SalesAreaDetail" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

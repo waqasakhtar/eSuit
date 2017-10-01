@@ -1,0 +1,24 @@
+﻿@model List<eSuitRepository.DataModels.SETUP_Company>
+@{
+    ViewBag.Title = "Company - List";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Company List</h2>
+<table>
+    <thead>
+    <th>
+        Company Name
+    </th>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>
+                    @c.Comp_Desc
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

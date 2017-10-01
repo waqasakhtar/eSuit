@@ -1,0 +1,9 @@
+E:\Projects\eSuit\eSuitRepository\bin\Release\eSuitRepository.dll.config
+E:\Projects\eSuit\eSuitRepository\bin\Release\eSuitRepository.dll
+E:\Projects\eSuit\eSuitRepository\bin\Release\eSuitRepository.pdb
+E:\Projects\eSuit\eSuitRepository\bin\Release\EntityFramework.dll
+E:\Projects\eSuit\eSuitRepository\bin\Release\EntityFramework.SqlServer.dll
+E:\Projects\eSuit\eSuitRepository\bin\Release\EntityFramework.xml
+E:\Projects\eSuit\eSuitRepository\bin\Release\EntityFramework.SqlServer.xml
+E:\Projects\eSuit\eSuitRepository\obj\Release\eSuitRepository.dll
+E:\Projects\eSuit\eSuitRepository\obj\Release\eSuitRepository.pdb

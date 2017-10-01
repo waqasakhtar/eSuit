@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eSuiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SECURITY_MenuAccess">
+    <Key>
+      <PropertyRef Name="MenuAcs_Id" />
+    </Key>
+    <Property Name="MenuAcs_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="Usr_Id" Type="int" />
+    <Property Name="Menu_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="SECURITY_User">
+    <Key>
+      <PropertyRef Name="Usr_Id" />
+    </Key>
+    <Property Name="Usr_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usr_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="UsrGrp_Id" Type="int" />
+    <Property Name="Usr_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="Usr_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="Usr_Status" Type="int" />
+    <Property Name="Usr_SortOrder" Type="int" />
+    <Property Name="Usr_LoginId" Type="varchar" MaxLength="50" />
+    <Property Name="Usr_Password" Type="varchar" MaxLength="100" />
+    <Property Name="Usr_EmployeeCode" Type="varchar" MaxLength="50" />
+    <Property Name="Usr_DefaultModule" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SECURITY_UserGroup">
+    <Key>
+      <PropertyRef Name="UsrGrp_Id" />
+    </Key>
+    <Property Name="UsrGrp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsrGrp_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="UsrGrp_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="UsrGrp_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="UsrGrp_Status" Type="int" />
+    <Property Name="UsrGrp_SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="SETUP_City">
+    <Key>
+      <PropertyRef Name="City_Id" />
+    </Key>
+    <Property Name="City_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="Cont_Id" Type="int" />
+    <Property Name="City_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="City_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="City_Status" Type="int" />
+    <Property Name="City_SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="SETUP_Company">
+    <Key>
+      <PropertyRef Name="Comp_Id" />
+    </Key>
+    <Property Name="Comp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="Comp_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="Comp_Status" Type="int" />
+    <Property Name="Comp_SortOrder" Type="int" />
+    <Property Name="Comp_NTN" Type="varchar" MaxLength="100" />
+    <Property Name="Comp_Address1" Type="varchar" MaxLength="300" />
+    <Property Name="Comp_Address2" Type="varchar" MaxLength="300" />
+    <Property Name="Comp_Address3" Type="varchar" MaxLength="300" />
+    <Property Name="Comp_Address4" Type="varchar" MaxLength="300" />
+    <Property Name="Comp_Phone1" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Phone3" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Mobile1" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Mobile2" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_EMail" Type="varchar" MaxLength="300" />
+    <Property Name="Comp_WEB" Type="varchar" MaxLength="300" />
+    <Property Name="Comp_ContactPerson" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="SETUP_Country">
+    <Key>
+      <PropertyRef Name="Cont_Id" />
+    </Key>
+    <Property Name="Cont_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cont_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="Cont_Continent" Type="varchar" MaxLength="20" />
+    <Property Name="Cont_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="Cont_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="Cont_Status" Type="int" />
+    <Property Name="Cont_SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="SETUP_Customer">
+    <Key>
+      <PropertyRef Name="Cst_Id" />
+    </Key>
+    <Property Name="Cst_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cst_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="CstTyp_Id" Type="int" />
+    <Property Name="Cst_Name" Type="varchar" MaxLength="300" />
+    <Property Name="Cont_Id" Type="int" />
+    <Property Name="City_Id" Type="int" />
+    <Property Name="Cst_Address1" Type="varchar" MaxLength="300" />
+    <Property Name="Cst_Address2" Type="varchar" MaxLength="300" />
+    <Property Name="Cst_Address3" Type="varchar" MaxLength="300" />
+    <Property Name="Cst_Address4" Type="varchar" MaxLength="300" />
+    <Property Name="Cst_Phone1" Type="varchar" MaxLength="50" />
+    <Property Name="Cst_Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Cst_Phone3" Type="varchar" MaxLength="50" />
+    <Property Name="Cst_Mobile1" Type="varchar" MaxLength="50" />
+    <Property Name="Cst_Mobile2" Type="varchar" MaxLength="50" />
+    <Property Name="Cst_Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Cst_EMail" Type="varchar" MaxLength="300" />
+    <Property Name="Cst_ContactPerson" Type="varchar" MaxLength="300" />
+    <Property Name="Cst_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="SETUP_CustomerDlvryAdd">
+    <Key>
+      <PropertyRef Name="CstDlAd_Id" />
+    </Key>
+    <Property Name="CstDlAd_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CstDlAd_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="Cst_Id" Type="int" />
+    <Property Name="CstDlAd_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="CstDlAd_Address1" Type="varchar" MaxLength="300" />
+    <Property Name="CstDlAd_Address2" Type="varchar" MaxLength="300" />
+    <Property Name="CstDlAd_Address3" Type="varchar" MaxLength="300" />
+    <Property Name="CstDlAd_Address4" Type="varchar" MaxLength="300" />
+    <Property Name="CstDlAd_Phone1" Type="varchar" MaxLength="50" />
+    <Property Name="CstDlAd_Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="CstDlAd_Phone3" Type="varchar" MaxLength="50" />
+    <Property Name="CstDlAd_Mobile1" Type="varchar" MaxLength="50" />
+    <Property Name="CstDlAd_Mobile2" Type="varchar" MaxLength="50" />
+    <Property Name="CstDlAd_Fax" Type="varchar" MaxLength="50" />
+    <Property Name="CstDlAd_EMail" Type="varchar" MaxLength="300" />
+    <Property Name="CstDlAd_ContactPerson" Type="varchar" MaxLength="300" />
+    <Property Name="CstDlAd_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="SETUP_CustomerType">
+    <Key>
+      <PropertyRef Name="CstTyp_Id" />
+    </Key>
+    <Property Name="CstTyp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CstTyp_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="CstTyp_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="CstTyp_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="CstTyp_Status" Type="int" />
+    <Property Name="CstTyp_SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="SETUP_Department">
+    <Key>
+      <PropertyRef Name="Dep_Id" />
+    </Key>
+    <Property Name="Dep_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dep_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="Dep_Level" Type="int" />
+    <Property Name="Dep_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="Dep_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="Dep_Status" Type="int" />
+    <Property Name="Dep_SortOrder" Type="int" />
+    <Property Name="Dep_Phone1" Type="varchar" MaxLength="50" />
+    <Property Name="Dep_Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Dep_Phone3" Type="varchar" MaxLength="50" />
+    <Property Name="Dep_Mobile1" Type="varchar" MaxLength="50" />
+    <Property Name="Dep_Mobile2" Type="varchar" MaxLength="50" />
+    <Property Name="Dep_Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Dep_EMail" Type="varchar" MaxLength="300" />
+    <Property Name="Dep_ContactPerson" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="SETUP_Location">
+    <Key>
+      <PropertyRef Name="Loc_Id" />
+    </Key>
+    <Property Name="Loc_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Loc_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="Loc_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="Loc_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="Loc_Status" Type="int" />
+    <Property Name="Loc_SortOrder" Type="int" />
+    <Property Name="Loc_Address1" Type="varchar" MaxLength="300" />
+    <Property Name="Loc_Address2" Type="varchar" MaxLength="300" />
+    <Property Name="Loc_Address3" Type="varchar" MaxLength="300" />
+    <Property Name="Loc_Address4" Type="varchar" MaxLength="300" />
+    <Property Name="Loc_Phone1" Type="varchar" MaxLength="50" />
+    <Property Name="Loc_Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Loc_Phone3" Type="varchar" MaxLength="50" />
+    <Property Name="Loc_Mobile1" Type="varchar" MaxLength="50" />
+    <Property Name="Loc_Mobile2" Type="varchar" MaxLength="50" />
+    <Property Name="Loc_Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Loc_EMail" Type="varchar" MaxLength="300" />
+    <Property Name="Loc_ContactPerson" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="SETUP_ProductGroup">
+    <Key>
+      <PropertyRef Name="ProdGrp_Id" />
+    </Key>
+    <Property Name="ProdGrp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProdGrp_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="ProdGrp_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="ProdGrp_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="ProdGrp_Status" Type="int" />
+    <Property Name="ProdGrp_SortOrder" Type="int" />
+    <Property Name="ProdGrp_Level" Type="int" />
+  </EntityType>
+  <EntityType Name="SETUP_SalesArea">
+    <Key>
+      <PropertyRef Name="SalAr_Id" />
+    </Key>
+    <Property Name="SalAr_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalAr_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="SalAr_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="SalAr_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="SalAr_Status" Type="int" />
+    <Property Name="SalAr_SortOrder" Type="int" />
+    <Property Name="SalAr_Level" Type="int" />
+  </EntityType>
+  <EntityType Name="SETUP_SalesAreaDetail">
+    <Key>
+      <PropertyRef Name="SalArDtl_Id" />
+    </Key>
+    <Property Name="SalArDtl_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalAr_Id" Type="int" />
+    <Property Name="City_Id" Type="int" />
+    <Property Name="SalArDtl_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="SETUP_Unit">
+    <Key>
+      <PropertyRef Name="Unit_Id" />
+    </Key>
+    <Property Name="Unit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Unit_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="Unit_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="Unit_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="Unit_Status" Type="int" />
+    <Property Name="Unit_SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="SYS_Menu">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Name="Menu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Comp_Id" Type="int" />
+    <Property Name="Menu_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="Menu_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="Menu_Status" Type="int" />
+    <Property Name="Menu_SortOrder" Type="int" />
+    <Property Name="Menu_Level" Type="int" />
+    <Property Name="Menu_Module" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="SYS_Parameter">
+    <Key>
+      <PropertyRef Name="SPara_Id" />
+    </Key>
+    <Property Name="SPara_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SPara_Code" Type="varchar" MaxLength="50" />
+    <Property Name="SPara_Desc" Type="varchar" MaxLength="300" />
+    <Property Name="SPara_ShortDesc" Type="varchar" MaxLength="100" />
+    <Property Name="SPara_Status" Type="int" />
+    <Property Name="SPara_Value" Type="varchar" MaxLength="300" />
+    <Property Name="SPara_InputType" Type="varchar" MaxLength="100" />
+    <Property Name="SPara_InputOption" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <Association Name="FK_CityCustomer">
+    <End Role="SETUP_City" Type="Self.SETUP_City" Multiplicity="0..1" />
+    <End Role="SETUP_Customer" Type="Self.SETUP_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_City">
+        <PropertyRef Name="City_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Customer">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CitySalesAreaDetail">
+    <End Role="SETUP_City" Type="Self.SETUP_City" Multiplicity="0..1" />
+    <End Role="SETUP_SalesAreaDetail" Type="Self.SETUP_SalesAreaDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_City">
+        <PropertyRef Name="City_Id" />
+      </Principal>
+      <Dependent Role="SETUP_SalesAreaDetail">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCity">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_City" Type="Self.SETUP_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_City">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCountry">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_Country" Type="Self.SETUP_Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Country">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCustomer">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_Customer" Type="Self.SETUP_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Customer">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCustomerDlvryAdd">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_CustomerDlvryAdd" Type="Self.SETUP_CustomerDlvryAdd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_CustomerDlvryAdd">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCustomerType">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_CustomerType" Type="Self.SETUP_CustomerType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_CustomerType">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyDepartment">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_Department" Type="Self.SETUP_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Department">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyLocation">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_Location" Type="Self.SETUP_Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Location">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyMenu">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SYS_Menu" Type="Self.SYS_Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SYS_Menu">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyMenuAccess">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SECURITY_MenuAccess" Type="Self.SECURITY_MenuAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_MenuAccess">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyProductGroup">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_ProductGroup" Type="Self.SETUP_ProductGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_ProductGroup">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanySalesArea">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_SalesArea" Type="Self.SETUP_SalesArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_SalesArea">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyUnit">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SETUP_Unit" Type="Self.SETUP_Unit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Unit">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyUser">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SECURITY_User" Type="Self.SECURITY_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_User">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyUserGroup">
+    <End Role="SETUP_Company" Type="Self.SETUP_Company" Multiplicity="0..1" />
+    <End Role="SECURITY_UserGroup" Type="Self.SECURITY_UserGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_UserGroup">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryCity">
+    <End Role="SETUP_Country" Type="Self.SETUP_Country" Multiplicity="0..1" />
+    <End Role="SETUP_City" Type="Self.SETUP_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Country">
+        <PropertyRef Name="Cont_Id" />
+      </Principal>
+      <Dependent Role="SETUP_City">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryCustomer">
+    <End Role="SETUP_Country" Type="Self.SETUP_Country" Multiplicity="0..1" />
+    <End Role="SETUP_Customer" Type="Self.SETUP_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Country">
+        <PropertyRef Name="Cont_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Customer">
+        <PropertyRef Name="Cont_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CstCustomerDlvryAdd">
+    <End Role="SETUP_Customer" Type="Self.SETUP_Customer" Multiplicity="0..1" />
+    <End Role="SETUP_CustomerDlvryAdd" Type="Self.SETUP_CustomerDlvryAdd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Customer">
+        <PropertyRef Name="Cst_Id" />
+      </Principal>
+      <Dependent Role="SETUP_CustomerDlvryAdd">
+        <PropertyRef Name="Cst_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CstTypeCustomer">
+    <End Role="SETUP_CustomerType" Type="Self.SETUP_CustomerType" Multiplicity="0..1" />
+    <End Role="SETUP_Customer" Type="Self.SETUP_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_CustomerType">
+        <PropertyRef Name="CstTyp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Customer">
+        <PropertyRef Name="CstTyp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuMenuAccess">
+    <End Role="SYS_Menu" Type="Self.SYS_Menu" Multiplicity="0..1" />
+    <End Role="SECURITY_MenuAccess" Type="Self.SECURITY_MenuAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYS_Menu">
+        <PropertyRef Name="Menu_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_MenuAccess">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesAreaDetail">
+    <End Role="SETUP_SalesArea" Type="Self.SETUP_SalesArea" Multiplicity="0..1" />
+    <End Role="SETUP_SalesAreaDetail" Type="Self.SETUP_SalesAreaDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_SalesArea">
+        <PropertyRef Name="SalAr_Id" />
+      </Principal>
+      <Dependent Role="SETUP_SalesAreaDetail">
+        <PropertyRef Name="SalAr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroupUser">
+    <End Role="SECURITY_UserGroup" Type="Self.SECURITY_UserGroup" Multiplicity="0..1" />
+    <End Role="SECURITY_User" Type="Self.SECURITY_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SECURITY_UserGroup">
+        <PropertyRef Name="UsrGrp_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_User">
+        <PropertyRef Name="UsrGrp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMenuAccess">
+    <End Role="SECURITY_User" Type="Self.SECURITY_User" Multiplicity="0..1" />
+    <End Role="SECURITY_MenuAccess" Type="Self.SECURITY_MenuAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SECURITY_User">
+        <PropertyRef Name="Usr_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_MenuAccess">
+        <PropertyRef Name="Usr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="eSuiteModelStoreContainer">
+    <EntitySet Name="SECURITY_MenuAccess" EntityType="Self.SECURITY_MenuAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SECURITY_User" EntityType="Self.SECURITY_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SECURITY_UserGroup" EntityType="Self.SECURITY_UserGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_City" EntityType="Self.SETUP_City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_Company" EntityType="Self.SETUP_Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_Country" EntityType="Self.SETUP_Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_Customer" EntityType="Self.SETUP_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_CustomerDlvryAdd" EntityType="Self.SETUP_CustomerDlvryAdd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_CustomerType" EntityType="Self.SETUP_CustomerType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_Department" EntityType="Self.SETUP_Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_Location" EntityType="Self.SETUP_Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_ProductGroup" EntityType="Self.SETUP_ProductGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_SalesArea" EntityType="Self.SETUP_SalesArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_SalesAreaDetail" EntityType="Self.SETUP_SalesAreaDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETUP_Unit" EntityType="Self.SETUP_Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYS_Menu" EntityType="Self.SYS_Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYS_Parameter" EntityType="Self.SYS_Parameter" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CityCustomer" Association="Self.FK_CityCustomer">
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CitySalesAreaDetail" Association="Self.FK_CitySalesAreaDetail">
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+      <End Role="SETUP_SalesAreaDetail" EntitySet="SETUP_SalesAreaDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCity" Association="Self.FK_CompanyCity">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCountry" Association="Self.FK_CompanyCountry">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Country" EntitySet="SETUP_Country" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCustomer" Association="Self.FK_CompanyCustomer">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCustomerDlvryAdd" Association="Self.FK_CompanyCustomerDlvryAdd">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_CustomerDlvryAdd" EntitySet="SETUP_CustomerDlvryAdd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCustomerType" Association="Self.FK_CompanyCustomerType">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_CustomerType" EntitySet="SETUP_CustomerType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyDepartment" Association="Self.FK_CompanyDepartment">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Department" EntitySet="SETUP_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyLocation" Association="Self.FK_CompanyLocation">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Location" EntitySet="SETUP_Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyMenu" Association="Self.FK_CompanyMenu">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SYS_Menu" EntitySet="SYS_Menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyMenuAccess" Association="Self.FK_CompanyMenuAccess">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SECURITY_MenuAccess" EntitySet="SECURITY_MenuAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyProductGroup" Association="Self.FK_CompanyProductGroup">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_ProductGroup" EntitySet="SETUP_ProductGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanySalesArea" Association="Self.FK_CompanySalesArea">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_SalesArea" EntitySet="SETUP_SalesArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyUnit" Association="Self.FK_CompanyUnit">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Unit" EntitySet="SETUP_Unit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyUser" Association="Self.FK_CompanyUser">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SECURITY_User" EntitySet="SECURITY_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyUserGroup" Association="Self.FK_CompanyUserGroup">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SECURITY_UserGroup" EntitySet="SECURITY_UserGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryCity" Association="Self.FK_CountryCity">
+      <End Role="SETUP_Country" EntitySet="SETUP_Country" />
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryCustomer" Association="Self.FK_CountryCustomer">
+      <End Role="SETUP_Country" EntitySet="SETUP_Country" />
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CstCustomerDlvryAdd" Association="Self.FK_CstCustomerDlvryAdd">
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+      <End Role="SETUP_CustomerDlvryAdd" EntitySet="SETUP_CustomerDlvryAdd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CstTypeCustomer" Association="Self.FK_CstTypeCustomer">
+      <End Role="SETUP_CustomerType" EntitySet="SETUP_CustomerType" />
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuMenuAccess" Association="Self.FK_MenuMenuAccess">
+      <End Role="SYS_Menu" EntitySet="SYS_Menu" />
+      <End Role="SECURITY_MenuAccess" EntitySet="SECURITY_MenuAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesAreaDetail" Association="Self.FK_SalesAreaDetail">
+      <End Role="SETUP_SalesArea" EntitySet="SETUP_SalesArea" />
+      <End Role="SETUP_SalesAreaDetail" EntitySet="SETUP_SalesAreaDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroupUser" Association="Self.FK_UserGroupUser">
+      <End Role="SECURITY_UserGroup" EntitySet="SECURITY_UserGroup" />
+      <End Role="SECURITY_User" EntitySet="SECURITY_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMenuAccess" Association="Self.FK_UserMenuAccess">
+      <End Role="SECURITY_User" EntitySet="SECURITY_User" />
+      <End Role="SECURITY_MenuAccess" EntitySet="SECURITY_MenuAccess" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

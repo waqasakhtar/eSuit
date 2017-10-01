@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eSuiteModelStoreContainer" CdmEntityContainer="eSuiteEntities">
+    <EntitySetMapping Name="SECURITY_MenuAccess">
+      <EntityTypeMapping TypeName="eSuiteModel.SECURITY_MenuAccess">
+        <MappingFragment StoreEntitySet="SECURITY_MenuAccess">
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="Usr_Id" ColumnName="Usr_Id" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="MenuAcs_Id" ColumnName="MenuAcs_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SECURITY_User">
+      <EntityTypeMapping TypeName="eSuiteModel.SECURITY_User">
+        <MappingFragment StoreEntitySet="SECURITY_User">
+          <ScalarProperty Name="Usr_DefaultModule" ColumnName="Usr_DefaultModule" />
+          <ScalarProperty Name="Usr_EmployeeCode" ColumnName="Usr_EmployeeCode" />
+          <ScalarProperty Name="Usr_Password" ColumnName="Usr_Password" />
+          <ScalarProperty Name="Usr_LoginId" ColumnName="Usr_LoginId" />
+          <ScalarProperty Name="Usr_SortOrder" ColumnName="Usr_SortOrder" />
+          <ScalarProperty Name="Usr_Status" ColumnName="Usr_Status" />
+          <ScalarProperty Name="Usr_ShortDesc" ColumnName="Usr_ShortDesc" />
+          <ScalarProperty Name="Usr_Desc" ColumnName="Usr_Desc" />
+          <ScalarProperty Name="UsrGrp_Id" ColumnName="UsrGrp_Id" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="Usr_Code" ColumnName="Usr_Code" />
+          <ScalarProperty Name="Usr_Id" ColumnName="Usr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SECURITY_UserGroup">
+      <EntityTypeMapping TypeName="eSuiteModel.SECURITY_UserGroup">
+        <MappingFragment StoreEntitySet="SECURITY_UserGroup">
+          <ScalarProperty Name="UsrGrp_SortOrder" ColumnName="UsrGrp_SortOrder" />
+          <ScalarProperty Name="UsrGrp_Status" ColumnName="UsrGrp_Status" />
+          <ScalarProperty Name="UsrGrp_ShortDesc" ColumnName="UsrGrp_ShortDesc" />
+          <ScalarProperty Name="UsrGrp_Desc" ColumnName="UsrGrp_Desc" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="UsrGrp_Code" ColumnName="UsrGrp_Code" />
+          <ScalarProperty Name="UsrGrp_Id" ColumnName="UsrGrp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_City">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_City">
+        <MappingFragment StoreEntitySet="SETUP_City">
+          <ScalarProperty Name="City_SortOrder" ColumnName="City_SortOrder" />
+          <ScalarProperty Name="City_Status" ColumnName="City_Status" />
+          <ScalarProperty Name="City_ShortDesc" ColumnName="City_ShortDesc" />
+          <ScalarProperty Name="City_Desc" ColumnName="City_Desc" />
+          <ScalarProperty Name="Cont_Id" ColumnName="Cont_Id" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="City_Code" ColumnName="City_Code" />
+          <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_Company">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_Company">
+        <MappingFragment StoreEntitySet="SETUP_Company">
+          <ScalarProperty Name="Comp_ContactPerson" ColumnName="Comp_ContactPerson" />
+          <ScalarProperty Name="Comp_WEB" ColumnName="Comp_WEB" />
+          <ScalarProperty Name="Comp_EMail" ColumnName="Comp_EMail" />
+          <ScalarProperty Name="Comp_Fax" ColumnName="Comp_Fax" />
+          <ScalarProperty Name="Comp_Mobile2" ColumnName="Comp_Mobile2" />
+          <ScalarProperty Name="Comp_Mobile1" ColumnName="Comp_Mobile1" />
+          <ScalarProperty Name="Comp_Phone3" ColumnName="Comp_Phone3" />
+          <ScalarProperty Name="Comp_Phone2" ColumnName="Comp_Phone2" />
+          <ScalarProperty Name="Comp_Phone1" ColumnName="Comp_Phone1" />
+          <ScalarProperty Name="Comp_Address4" ColumnName="Comp_Address4" />
+          <ScalarProperty Name="Comp_Address3" ColumnName="Comp_Address3" />
+          <ScalarProperty Name="Comp_Address2" ColumnName="Comp_Address2" />
+          <ScalarProperty Name="Comp_Address1" ColumnName="Comp_Address1" />
+          <ScalarProperty Name="Comp_NTN" ColumnName="Comp_NTN" />
+          <ScalarProperty Name="Comp_SortOrder" ColumnName="Comp_SortOrder" />
+          <ScalarProperty Name="Comp_Status" ColumnName="Comp_Status" />
+          <ScalarProperty Name="Comp_ShortDesc" ColumnName="Comp_ShortDesc" />
+          <ScalarProperty Name="Comp_Desc" ColumnName="Comp_Desc" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_Country">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_Country">
+        <MappingFragment StoreEntitySet="SETUP_Country">
+          <ScalarProperty Name="Cont_SortOrder" ColumnName="Cont_SortOrder" />
+          <ScalarProperty Name="Cont_Status" ColumnName="Cont_Status" />
+          <ScalarProperty Name="Cont_ShortDesc" ColumnName="Cont_ShortDesc" />
+          <ScalarProperty Name="Cont_Desc" ColumnName="Cont_Desc" />
+          <ScalarProperty Name="Cont_Continent" ColumnName="Cont_Continent" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="Cont_Code" ColumnName="Cont_Code" />
+          <ScalarProperty Name="Cont_Id" ColumnName="Cont_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_Customer">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_Customer">
+        <MappingFragment StoreEntitySet="SETUP_Customer">
+          <ScalarProperty Name="Cst_Status" ColumnName="Cst_Status" />
+          <ScalarProperty Name="Cst_ContactPerson" ColumnName="Cst_ContactPerson" />
+          <ScalarProperty Name="Cst_EMail" ColumnName="Cst_EMail" />
+          <ScalarProperty Name="Cst_Fax" ColumnName="Cst_Fax" />
+          <ScalarProperty Name="Cst_Mobile2" ColumnName="Cst_Mobile2" />
+          <ScalarProperty Name="Cst_Mobile1" ColumnName="Cst_Mobile1" />
+          <ScalarProperty Name="Cst_Phone3" ColumnName="Cst_Phone3" />
+          <ScalarProperty Name="Cst_Phone2" ColumnName="Cst_Phone2" />
+          <ScalarProperty Name="Cst_Phone1" ColumnName="Cst_Phone1" />
+          <ScalarProperty Name="Cst_Address4" ColumnName="Cst_Address4" />
+          <ScalarProperty Name="Cst_Address3" ColumnName="Cst_Address3" />
+          <ScalarProperty Name="Cst_Address2" ColumnName="Cst_Address2" />
+          <ScalarProperty Name="Cst_Address1" ColumnName="Cst_Address1" />
+          <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+          <ScalarProperty Name="Cont_Id" ColumnName="Cont_Id" />
+          <ScalarProperty Name="Cst_Name" ColumnName="Cst_Name" />
+          <ScalarProperty Name="CstTyp_Id" ColumnName="CstTyp_Id" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="Cst_Code" ColumnName="Cst_Code" />
+          <ScalarProperty Name="Cst_Id" ColumnName="Cst_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_CustomerDlvryAdd">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_CustomerDlvryAdd">
+        <MappingFragment StoreEntitySet="SETUP_CustomerDlvryAdd">
+          <ScalarProperty Name="CstDlAd_Status" ColumnName="CstDlAd_Status" />
+          <ScalarProperty Name="CstDlAd_ContactPerson" ColumnName="CstDlAd_ContactPerson" />
+          <ScalarProperty Name="CstDlAd_EMail" ColumnName="CstDlAd_EMail" />
+          <ScalarProperty Name="CstDlAd_Fax" ColumnName="CstDlAd_Fax" />
+          <ScalarProperty Name="CstDlAd_Mobile2" ColumnName="CstDlAd_Mobile2" />
+          <ScalarProperty Name="CstDlAd_Mobile1" ColumnName="CstDlAd_Mobile1" />
+          <ScalarProperty Name="CstDlAd_Phone3" ColumnName="CstDlAd_Phone3" />
+          <ScalarProperty Name="CstDlAd_Phone2" ColumnName="CstDlAd_Phone2" />
+          <ScalarProperty Name="CstDlAd_Phone1" ColumnName="CstDlAd_Phone1" />
+          <ScalarProperty Name="CstDlAd_Address4" ColumnName="CstDlAd_Address4" />
+          <ScalarProperty Name="CstDlAd_Address3" ColumnName="CstDlAd_Address3" />
+          <ScalarProperty Name="CstDlAd_Address2" ColumnName="CstDlAd_Address2" />
+          <ScalarProperty Name="CstDlAd_Address1" ColumnName="CstDlAd_Address1" />
+          <ScalarProperty Name="CstDlAd_Desc" ColumnName="CstDlAd_Desc" />
+          <ScalarProperty Name="Cst_Id" ColumnName="Cst_Id" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="CstDlAd_Code" ColumnName="CstDlAd_Code" />
+          <ScalarProperty Name="CstDlAd_Id" ColumnName="CstDlAd_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_CustomerType">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_CustomerType">
+        <MappingFragment StoreEntitySet="SETUP_CustomerType">
+          <ScalarProperty Name="CstTyp_SortOrder" ColumnName="CstTyp_SortOrder" />
+          <ScalarProperty Name="CstTyp_Status" ColumnName="CstTyp_Status" />
+          <ScalarProperty Name="CstTyp_ShortDesc" ColumnName="CstTyp_ShortDesc" />
+          <ScalarProperty Name="CstTyp_Desc" ColumnName="CstTyp_Desc" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="CstTyp_Code" ColumnName="CstTyp_Code" />
+          <ScalarProperty Name="CstTyp_Id" ColumnName="CstTyp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_Department">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_Department">
+        <MappingFragment StoreEntitySet="SETUP_Department">
+          <ScalarProperty Name="Dep_ContactPerson" ColumnName="Dep_ContactPerson" />
+          <ScalarProperty Name="Dep_EMail" ColumnName="Dep_EMail" />
+          <ScalarProperty Name="Dep_Fax" ColumnName="Dep_Fax" />
+          <ScalarProperty Name="Dep_Mobile2" ColumnName="Dep_Mobile2" />
+          <ScalarProperty Name="Dep_Mobile1" ColumnName="Dep_Mobile1" />
+          <ScalarProperty Name="Dep_Phone3" ColumnName="Dep_Phone3" />
+          <ScalarProperty Name="Dep_Phone2" ColumnName="Dep_Phone2" />
+          <ScalarProperty Name="Dep_Phone1" ColumnName="Dep_Phone1" />
+          <ScalarProperty Name="Dep_SortOrder" ColumnName="Dep_SortOrder" />
+          <ScalarProperty Name="Dep_Status" ColumnName="Dep_Status" />
+          <ScalarProperty Name="Dep_ShortDesc" ColumnName="Dep_ShortDesc" />
+          <ScalarProperty Name="Dep_Desc" ColumnName="Dep_Desc" />
+          <ScalarProperty Name="Dep_Level" ColumnName="Dep_Level" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="Dep_Code" ColumnName="Dep_Code" />
+          <ScalarProperty Name="Dep_Id" ColumnName="Dep_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_Location">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_Location">
+        <MappingFragment StoreEntitySet="SETUP_Location">
+          <ScalarProperty Name="Loc_ContactPerson" ColumnName="Loc_ContactPerson" />
+          <ScalarProperty Name="Loc_EMail" ColumnName="Loc_EMail" />
+          <ScalarProperty Name="Loc_Fax" ColumnName="Loc_Fax" />
+          <ScalarProperty Name="Loc_Mobile2" ColumnName="Loc_Mobile2" />
+          <ScalarProperty Name="Loc_Mobile1" ColumnName="Loc_Mobile1" />
+          <ScalarProperty Name="Loc_Phone3" ColumnName="Loc_Phone3" />
+          <ScalarProperty Name="Loc_Phone2" ColumnName="Loc_Phone2" />
+          <ScalarProperty Name="Loc_Phone1" ColumnName="Loc_Phone1" />
+          <ScalarProperty Name="Loc_Address4" ColumnName="Loc_Address4" />
+          <ScalarProperty Name="Loc_Address3" ColumnName="Loc_Address3" />
+          <ScalarProperty Name="Loc_Address2" ColumnName="Loc_Address2" />
+          <ScalarProperty Name="Loc_Address1" ColumnName="Loc_Address1" />
+          <ScalarProperty Name="Loc_SortOrder" ColumnName="Loc_SortOrder" />
+          <ScalarProperty Name="Loc_Status" ColumnName="Loc_Status" />
+          <ScalarProperty Name="Loc_ShortDesc" ColumnName="Loc_ShortDesc" />
+          <ScalarProperty Name="Loc_Desc" ColumnName="Loc_Desc" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="Loc_Code" ColumnName="Loc_Code" />
+          <ScalarProperty Name="Loc_Id" ColumnName="Loc_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_ProductGroup">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_ProductGroup">
+        <MappingFragment StoreEntitySet="SETUP_ProductGroup">
+          <ScalarProperty Name="ProdGrp_Level" ColumnName="ProdGrp_Level" />
+          <ScalarProperty Name="ProdGrp_SortOrder" ColumnName="ProdGrp_SortOrder" />
+          <ScalarProperty Name="ProdGrp_Status" ColumnName="ProdGrp_Status" />
+          <ScalarProperty Name="ProdGrp_ShortDesc" ColumnName="ProdGrp_ShortDesc" />
+          <ScalarProperty Name="ProdGrp_Desc" ColumnName="ProdGrp_Desc" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="ProdGrp_Code" ColumnName="ProdGrp_Code" />
+          <ScalarProperty Name="ProdGrp_Id" ColumnName="ProdGrp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_SalesArea">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_SalesArea">
+        <MappingFragment StoreEntitySet="SETUP_SalesArea">
+          <ScalarProperty Name="SalAr_Level" ColumnName="SalAr_Level" />
+          <ScalarProperty Name="SalAr_SortOrder" ColumnName="SalAr_SortOrder" />
+          <ScalarProperty Name="SalAr_Status" ColumnName="SalAr_Status" />
+          <ScalarProperty Name="SalAr_ShortDesc" ColumnName="SalAr_ShortDesc" />
+          <ScalarProperty Name="SalAr_Desc" ColumnName="SalAr_Desc" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="SalAr_Code" ColumnName="SalAr_Code" />
+          <ScalarProperty Name="SalAr_Id" ColumnName="SalAr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_SalesAreaDetail">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_SalesAreaDetail">
+        <MappingFragment StoreEntitySet="SETUP_SalesAreaDetail">
+          <ScalarProperty Name="SalArDtl_Status" ColumnName="SalArDtl_Status" />
+          <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+          <ScalarProperty Name="SalAr_Id" ColumnName="SalAr_Id" />
+          <ScalarProperty Name="SalArDtl_Id" ColumnName="SalArDtl_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_Unit">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_Unit">
+        <MappingFragment StoreEntitySet="SETUP_Unit">
+          <ScalarProperty Name="Unit_SortOrder" ColumnName="Unit_SortOrder" />
+          <ScalarProperty Name="Unit_Status" ColumnName="Unit_Status" />
+          <ScalarProperty Name="Unit_ShortDesc" ColumnName="Unit_ShortDesc" />
+          <ScalarProperty Name="Unit_Desc" ColumnName="Unit_Desc" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="Unit_Code" ColumnName="Unit_Code" />
+          <ScalarProperty Name="Unit_Id" ColumnName="Unit_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_Menu">
+      <EntityTypeMapping TypeName="eSuiteModel.SYS_Menu">
+        <MappingFragment StoreEntitySet="SYS_Menu">
+          <ScalarProperty Name="Menu_Module" ColumnName="Menu_Module" />
+          <ScalarProperty Name="Menu_Level" ColumnName="Menu_Level" />
+          <ScalarProperty Name="Menu_SortOrder" ColumnName="Menu_SortOrder" />
+          <ScalarProperty Name="Menu_Status" ColumnName="Menu_Status" />
+          <ScalarProperty Name="Menu_ShortDesc" ColumnName="Menu_ShortDesc" />
+          <ScalarProperty Name="Menu_Desc" ColumnName="Menu_Desc" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="Menu_Code" ColumnName="Menu_Code" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_Parameter">
+      <EntityTypeMapping TypeName="eSuiteModel.SYS_Parameter">
+        <MappingFragment StoreEntitySet="SYS_Parameter">
+          <ScalarProperty Name="SPara_InputOption" ColumnName="SPara_InputOption" />
+          <ScalarProperty Name="SPara_InputType" ColumnName="SPara_InputType" />
+          <ScalarProperty Name="SPara_Value" ColumnName="SPara_Value" />
+          <ScalarProperty Name="SPara_Status" ColumnName="SPara_Status" />
+          <ScalarProperty Name="SPara_ShortDesc" ColumnName="SPara_ShortDesc" />
+          <ScalarProperty Name="SPara_Desc" ColumnName="SPara_Desc" />
+          <ScalarProperty Name="SPara_Code" ColumnName="SPara_Code" />
+          <ScalarProperty Name="SPara_Id" ColumnName="SPara_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

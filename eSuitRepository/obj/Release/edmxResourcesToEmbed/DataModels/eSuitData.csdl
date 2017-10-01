@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eSuiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="eSuiteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SECURITY_MenuAccess" EntityType="eSuiteModel.SECURITY_MenuAccess" />
+    <EntitySet Name="SECURITY_User" EntityType="eSuiteModel.SECURITY_User" />
+    <EntitySet Name="SECURITY_UserGroup" EntityType="eSuiteModel.SECURITY_UserGroup" />
+    <EntitySet Name="SETUP_City" EntityType="eSuiteModel.SETUP_City" />
+    <EntitySet Name="SETUP_Company" EntityType="eSuiteModel.SETUP_Company" />
+    <EntitySet Name="SETUP_Country" EntityType="eSuiteModel.SETUP_Country" />
+    <EntitySet Name="SETUP_Customer" EntityType="eSuiteModel.SETUP_Customer" />
+    <EntitySet Name="SETUP_CustomerDlvryAdd" EntityType="eSuiteModel.SETUP_CustomerDlvryAdd" />
+    <EntitySet Name="SETUP_CustomerType" EntityType="eSuiteModel.SETUP_CustomerType" />
+    <EntitySet Name="SETUP_Department" EntityType="eSuiteModel.SETUP_Department" />
+    <EntitySet Name="SETUP_Location" EntityType="eSuiteModel.SETUP_Location" />
+    <EntitySet Name="SETUP_ProductGroup" EntityType="eSuiteModel.SETUP_ProductGroup" />
+    <EntitySet Name="SETUP_SalesArea" EntityType="eSuiteModel.SETUP_SalesArea" />
+    <EntitySet Name="SETUP_SalesAreaDetail" EntityType="eSuiteModel.SETUP_SalesAreaDetail" />
+    <EntitySet Name="SETUP_Unit" EntityType="eSuiteModel.SETUP_Unit" />
+    <EntitySet Name="SYS_Menu" EntityType="eSuiteModel.SYS_Menu" />
+    <EntitySet Name="SYS_Parameter" EntityType="eSuiteModel.SYS_Parameter" />
+    <AssociationSet Name="FK_CompanyMenuAccess" Association="eSuiteModel.FK_CompanyMenuAccess">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SECURITY_MenuAccess" EntitySet="SECURITY_MenuAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuMenuAccess" Association="eSuiteModel.FK_MenuMenuAccess">
+      <End Role="SYS_Menu" EntitySet="SYS_Menu" />
+      <End Role="SECURITY_MenuAccess" EntitySet="SECURITY_MenuAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMenuAccess" Association="eSuiteModel.FK_UserMenuAccess">
+      <End Role="SECURITY_User" EntitySet="SECURITY_User" />
+      <End Role="SECURITY_MenuAccess" EntitySet="SECURITY_MenuAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyUser" Association="eSuiteModel.FK_CompanyUser">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SECURITY_User" EntitySet="SECURITY_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroupUser" Association="eSuiteModel.FK_UserGroupUser">
+      <End Role="SECURITY_UserGroup" EntitySet="SECURITY_UserGroup" />
+      <End Role="SECURITY_User" EntitySet="SECURITY_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyUserGroup" Association="eSuiteModel.FK_CompanyUserGroup">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SECURITY_UserGroup" EntitySet="SECURITY_UserGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CityCustomer" Association="eSuiteModel.FK_CityCustomer">
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CitySalesAreaDetail" Association="eSuiteModel.FK_CitySalesAreaDetail">
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+      <End Role="SETUP_SalesAreaDetail" EntitySet="SETUP_SalesAreaDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCity" Association="eSuiteModel.FK_CompanyCity">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryCity" Association="eSuiteModel.FK_CountryCity">
+      <End Role="SETUP_Country" EntitySet="SETUP_Country" />
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCountry" Association="eSuiteModel.FK_CompanyCountry">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Country" EntitySet="SETUP_Country" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCustomer" Association="eSuiteModel.FK_CompanyCustomer">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCustomerDlvryAdd" Association="eSuiteModel.FK_CompanyCustomerDlvryAdd">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_CustomerDlvryAdd" EntitySet="SETUP_CustomerDlvryAdd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCustomerType" Association="eSuiteModel.FK_CompanyCustomerType">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_CustomerType" EntitySet="SETUP_CustomerType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyDepartment" Association="eSuiteModel.FK_CompanyDepartment">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Department" EntitySet="SETUP_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyLocation" Association="eSuiteModel.FK_CompanyLocation">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Location" EntitySet="SETUP_Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyMenu" Association="eSuiteModel.FK_CompanyMenu">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SYS_Menu" EntitySet="SYS_Menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyProductGroup" Association="eSuiteModel.FK_CompanyProductGroup">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_ProductGroup" EntitySet="SETUP_ProductGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanySalesArea" Association="eSuiteModel.FK_CompanySalesArea">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_SalesArea" EntitySet="SETUP_SalesArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyUnit" Association="eSuiteModel.FK_CompanyUnit">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_Unit" EntitySet="SETUP_Unit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryCustomer" Association="eSuiteModel.FK_CountryCustomer">
+      <End Role="SETUP_Country" EntitySet="SETUP_Country" />
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CstCustomerDlvryAdd" Association="eSuiteModel.FK_CstCustomerDlvryAdd">
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+      <End Role="SETUP_CustomerDlvryAdd" EntitySet="SETUP_CustomerDlvryAdd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CstTypeCustomer" Association="eSuiteModel.FK_CstTypeCustomer">
+      <End Role="SETUP_CustomerType" EntitySet="SETUP_CustomerType" />
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesAreaDetail" Association="eSuiteModel.FK_SalesAreaDetail">
+      <End Role="SETUP_SalesArea" EntitySet="SETUP_SalesArea" />
+      <End Role="SETUP_SalesAreaDetail" EntitySet="SETUP_SalesAreaDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SECURITY_MenuAccess">
+    <Key>
+      <PropertyRef Name="MenuAcs_Id" />
+    </Key>
+    <Property Name="MenuAcs_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="Usr_Id" Type="Int32" />
+    <Property Name="Menu_Id" Type="Int32" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyMenuAccess" FromRole="SECURITY_MenuAccess" ToRole="SETUP_Company" />
+    <NavigationProperty Name="SYS_Menu" Relationship="eSuiteModel.FK_MenuMenuAccess" FromRole="SECURITY_MenuAccess" ToRole="SYS_Menu" />
+    <NavigationProperty Name="SECURITY_User" Relationship="eSuiteModel.FK_UserMenuAccess" FromRole="SECURITY_MenuAccess" ToRole="SECURITY_User" />
+  </EntityType>
+  <EntityType Name="SECURITY_User">
+    <Key>
+      <PropertyRef Name="Usr_Id" />
+    </Key>
+    <Property Name="Usr_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usr_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="UsrGrp_Id" Type="Int32" />
+    <Property Name="Usr_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Usr_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Usr_Status" Type="Int32" />
+    <Property Name="Usr_SortOrder" Type="Int32" />
+    <Property Name="Usr_LoginId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Usr_Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Usr_EmployeeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Usr_DefaultModule" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SECURITY_MenuAccess" Relationship="eSuiteModel.FK_UserMenuAccess" FromRole="SECURITY_User" ToRole="SECURITY_MenuAccess" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyUser" FromRole="SECURITY_User" ToRole="SETUP_Company" />
+    <NavigationProperty Name="SECURITY_UserGroup" Relationship="eSuiteModel.FK_UserGroupUser" FromRole="SECURITY_User" ToRole="SECURITY_UserGroup" />
+  </EntityType>
+  <EntityType Name="SECURITY_UserGroup">
+    <Key>
+      <PropertyRef Name="UsrGrp_Id" />
+    </Key>
+    <Property Name="UsrGrp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsrGrp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="UsrGrp_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="UsrGrp_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UsrGrp_Status" Type="Int32" />
+    <Property Name="UsrGrp_SortOrder" Type="Int32" />
+    <NavigationProperty Name="SECURITY_User" Relationship="eSuiteModel.FK_UserGroupUser" FromRole="SECURITY_UserGroup" ToRole="SECURITY_User" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyUserGroup" FromRole="SECURITY_UserGroup" ToRole="SETUP_Company" />
+  </EntityType>
+  <EntityType Name="SETUP_City">
+    <Key>
+      <PropertyRef Name="City_Id" />
+    </Key>
+    <Property Name="City_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="Cont_Id" Type="Int32" />
+    <Property Name="City_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="City_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City_Status" Type="Int32" />
+    <Property Name="City_SortOrder" Type="Int32" />
+    <NavigationProperty Name="SETUP_Customer" Relationship="eSuiteModel.FK_CityCustomer" FromRole="SETUP_City" ToRole="SETUP_Customer" />
+    <NavigationProperty Name="SETUP_SalesAreaDetail" Relationship="eSuiteModel.FK_CitySalesAreaDetail" FromRole="SETUP_City" ToRole="SETUP_SalesAreaDetail" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyCity" FromRole="SETUP_City" ToRole="SETUP_Company" />
+    <NavigationProperty Name="SETUP_Country" Relationship="eSuiteModel.FK_CountryCity" FromRole="SETUP_City" ToRole="SETUP_Country" />
+  </EntityType>
+  <EntityType Name="SETUP_Company">
+    <Key>
+      <PropertyRef Name="Comp_Id" />
+    </Key>
+    <Property Name="Comp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Comp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Status" Type="Int32" />
+    <Property Name="Comp_SortOrder" Type="Int32" />
+    <Property Name="Comp_NTN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Address1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Address2" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Address3" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Address4" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Phone3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Mobile2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_EMail" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_WEB" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_ContactPerson" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SECURITY_MenuAccess" Relationship="eSuiteModel.FK_CompanyMenuAccess" FromRole="SETUP_Company" ToRole="SECURITY_MenuAccess" />
+    <NavigationProperty Name="SECURITY_User" Relationship="eSuiteModel.FK_CompanyUser" FromRole="SETUP_Company" ToRole="SECURITY_User" />
+    <NavigationProperty Name="SECURITY_UserGroup" Relationship="eSuiteModel.FK_CompanyUserGroup" FromRole="SETUP_Company" ToRole="SECURITY_UserGroup" />
+    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CompanyCity" FromRole="SETUP_Company" ToRole="SETUP_City" />
+    <NavigationProperty Name="SETUP_Country" Relationship="eSuiteModel.FK_CompanyCountry" FromRole="SETUP_Company" ToRole="SETUP_Country" />
+    <NavigationProperty Name="SETUP_Customer" Relationship="eSuiteModel.FK_CompanyCustomer" FromRole="SETUP_Company" ToRole="SETUP_Customer" />
+    <NavigationProperty Name="SETUP_CustomerDlvryAdd" Relationship="eSuiteModel.FK_CompanyCustomerDlvryAdd" FromRole="SETUP_Company" ToRole="SETUP_CustomerDlvryAdd" />
+    <NavigationProperty Name="SETUP_CustomerType" Relationship="eSuiteModel.FK_CompanyCustomerType" FromRole="SETUP_Company" ToRole="SETUP_CustomerType" />
+    <NavigationProperty Name="SETUP_Department" Relationship="eSuiteModel.FK_CompanyDepartment" FromRole="SETUP_Company" ToRole="SETUP_Department" />
+    <NavigationProperty Name="SETUP_Location" Relationship="eSuiteModel.FK_CompanyLocation" FromRole="SETUP_Company" ToRole="SETUP_Location" />
+    <NavigationProperty Name="SYS_Menu" Relationship="eSuiteModel.FK_CompanyMenu" FromRole="SETUP_Company" ToRole="SYS_Menu" />
+    <NavigationProperty Name="SETUP_ProductGroup" Relationship="eSuiteModel.FK_CompanyProductGroup" FromRole="SETUP_Company" ToRole="SETUP_ProductGroup" />
+    <NavigationProperty Name="SETUP_SalesArea" Relationship="eSuiteModel.FK_CompanySalesArea" FromRole="SETUP_Company" ToRole="SETUP_SalesArea" />
+    <NavigationProperty Name="SETUP_Unit" Relationship="eSuiteModel.FK_CompanyUnit" FromRole="SETUP_Company" ToRole="SETUP_Unit" />
+  </EntityType>
+  <EntityType Name="SETUP_Country">
+    <Key>
+      <PropertyRef Name="Cont_Id" />
+    </Key>
+    <Property Name="Cont_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cont_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="Cont_Continent" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Cont_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cont_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cont_Status" Type="Int32" />
+    <Property Name="Cont_SortOrder" Type="Int32" />
+    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CountryCity" FromRole="SETUP_Country" ToRole="SETUP_City" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyCountry" FromRole="SETUP_Country" ToRole="SETUP_Company" />
+    <NavigationProperty Name="SETUP_Customer" Relationship="eSuiteModel.FK_CountryCustomer" FromRole="SETUP_Country" ToRole="SETUP_Customer" />
+  </EntityType>
+  <EntityType Name="SETUP_Customer">
+    <Key>
+      <PropertyRef Name="Cst_Id" />
+    </Key>
+    <Property Name="Cst_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cst_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="CstTyp_Id" Type="Int32" />
+    <Property Name="Cst_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cont_Id" Type="Int32" />
+    <Property Name="City_Id" Type="Int32" />
+    <Property Name="Cst_Address1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Address2" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Address3" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Address4" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Phone3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Mobile2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_EMail" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_ContactPerson" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cst_Status" Type="Int32" />
+    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CityCustomer" FromRole="SETUP_Customer" ToRole="SETUP_City" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyCustomer" FromRole="SETUP_Customer" ToRole="SETUP_Company" />
+    <NavigationProperty Name="SETUP_Country" Relationship="eSuiteModel.FK_CountryCustomer" FromRole="SETUP_Customer" ToRole="SETUP_Country" />
+    <NavigationProperty Name="SETUP_CustomerDlvryAdd" Relationship="eSuiteModel.FK_CstCustomerDlvryAdd" FromRole="SETUP_Customer" ToRole="SETUP_CustomerDlvryAdd" />
+    <NavigationProperty Name="SETUP_CustomerType" Relationship="eSuiteModel.FK_CstTypeCustomer" FromRole="SETUP_Customer" ToRole="SETUP_CustomerType" />
+  </EntityType>
+  <EntityType Name="SETUP_CustomerDlvryAdd">
+    <Key>
+      <PropertyRef Name="CstDlAd_Id" />
+    </Key>
+    <Property Name="CstDlAd_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CstDlAd_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="Cst_Id" Type="Int32" />
+    <Property Name="CstDlAd_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Address1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Address2" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Address3" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Address4" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Phone3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Mobile2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_EMail" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_ContactPerson" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CstDlAd_Status" Type="Int32" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyCustomerDlvryAdd" FromRole="SETUP_CustomerDlvryAdd" ToRole="SETUP_Company" />
+    <NavigationProperty Name="SETUP_Customer" Relationship="eSuiteModel.FK_CstCustomerDlvryAdd" FromRole="SETUP_CustomerDlvryAdd" ToRole="SETUP_Customer" />
+  </EntityType>
+  <EntityType Name="SETUP_CustomerType">
+    <Key>
+      <PropertyRef Name="CstTyp_Id" />
+    </Key>
+    <Property Name="CstTyp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CstTyp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="CstTyp_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CstTyp_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CstTyp_Status" Type="Int32" />
+    <Property Name="CstTyp_SortOrder" Type="Int32" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyCustomerType" FromRole="SETUP_CustomerType" ToRole="SETUP_Company" />
+    <NavigationProperty Name="SETUP_Customer" Relationship="eSuiteModel.FK_CstTypeCustomer" FromRole="SETUP_CustomerType" ToRole="SETUP_Customer" />
+  </EntityType>
+  <EntityType Name="SETUP_Department">
+    <Key>
+      <PropertyRef Name="Dep_Id" />
+    </Key>
+    <Property Name="Dep_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dep_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="Dep_Level" Type="Int32" />
+    <Property Name="Dep_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_Status" Type="Int32" />
+    <Property Name="Dep_SortOrder" Type="Int32" />
+    <Property Name="Dep_Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_Phone3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_Mobile2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_EMail" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_ContactPerson" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyDepartment" FromRole="SETUP_Department" ToRole="SETUP_Company" />
+  </EntityType>
+  <EntityType Name="SETUP_Location">
+    <Key>
+      <PropertyRef Name="Loc_Id" />
+    </Key>
+    <Property Name="Loc_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Loc_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="Loc_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Status" Type="Int32" />
+    <Property Name="Loc_SortOrder" Type="Int32" />
+    <Property Name="Loc_Address1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Address2" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Address3" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Address4" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Phone3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Mobile2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_EMail" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Loc_ContactPerson" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyLocation" FromRole="SETUP_Location" ToRole="SETUP_Company" />
+  </EntityType>
+  <EntityType Name="SETUP_ProductGroup">
+    <Key>
+      <PropertyRef Name="ProdGrp_Id" />
+    </Key>
+    <Property Name="ProdGrp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProdGrp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="ProdGrp_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ProdGrp_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProdGrp_Status" Type="Int32" />
+    <Property Name="ProdGrp_SortOrder" Type="Int32" />
+    <Property Name="ProdGrp_Level" Type="Int32" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyProductGroup" FromRole="SETUP_ProductGroup" ToRole="SETUP_Company" />
+  </EntityType>
+  <EntityType Name="SETUP_SalesArea">
+    <Key>
+      <PropertyRef Name="SalAr_Id" />
+    </Key>
+    <Property Name="SalAr_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalAr_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="SalAr_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SalAr_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SalAr_Status" Type="Int32" />
+    <Property Name="SalAr_SortOrder" Type="Int32" />
+    <Property Name="SalAr_Level" Type="Int32" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanySalesArea" FromRole="SETUP_SalesArea" ToRole="SETUP_Company" />
+    <NavigationProperty Name="SETUP_SalesAreaDetail" Relationship="eSuiteModel.FK_SalesAreaDetail" FromRole="SETUP_SalesArea" ToRole="SETUP_SalesAreaDetail" />
+  </EntityType>
+  <EntityType Name="SETUP_SalesAreaDetail">
+    <Key>
+      <PropertyRef Name="SalArDtl_Id" />
+    </Key>
+    <Property Name="SalArDtl_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalAr_Id" Type="Int32" />
+    <Property Name="City_Id" Type="Int32" />
+    <Property Name="SalArDtl_Status" Type="Int32" />
+    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CitySalesAreaDetail" FromRole="SETUP_SalesAreaDetail" ToRole="SETUP_City" />
+    <NavigationProperty Name="SETUP_SalesArea" Relationship="eSuiteModel.FK_SalesAreaDetail" FromRole="SETUP_SalesAreaDetail" ToRole="SETUP_SalesArea" />
+  </EntityType>
+  <EntityType Name="SETUP_Unit">
+    <Key>
+      <PropertyRef Name="Unit_Id" />
+    </Key>
+    <Property Name="Unit_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Unit_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="Unit_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Unit_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Unit_Status" Type="Int32" />
+    <Property Name="Unit_SortOrder" Type="Int32" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyUnit" FromRole="SETUP_Unit" ToRole="SETUP_Company" />
+  </EntityType>
+  <EntityType Name="SYS_Menu">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Name="Menu_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Menu_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="Menu_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Menu_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Menu_Status" Type="Int32" />
+    <Property Name="Menu_SortOrder" Type="Int32" />
+    <Property Name="Menu_Level" Type="Int32" />
+    <Property Name="Menu_Module" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SECURITY_MenuAccess" Relationship="eSuiteModel.FK_MenuMenuAccess" FromRole="SYS_Menu" ToRole="SECURITY_MenuAccess" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyMenu" FromRole="SYS_Menu" ToRole="SETUP_Company" />
+  </EntityType>
+  <EntityType Name="SYS_Parameter">
+    <Key>
+      <PropertyRef Name="SPara_Id" />
+    </Key>
+    <Property Name="SPara_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SPara_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SPara_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SPara_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SPara_Status" Type="Int32" />
+    <Property Name="SPara_Value" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SPara_InputType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SPara_InputOption" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_CompanyMenuAccess">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SECURITY_MenuAccess" Role="SECURITY_MenuAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_MenuAccess">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuMenuAccess">
+    <End Type="eSuiteModel.SYS_Menu" Role="SYS_Menu" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SECURITY_MenuAccess" Role="SECURITY_MenuAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYS_Menu">
+        <PropertyRef Name="Menu_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_MenuAccess">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMenuAccess">
+    <End Type="eSuiteModel.SECURITY_User" Role="SECURITY_User" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SECURITY_MenuAccess" Role="SECURITY_MenuAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SECURITY_User">
+        <PropertyRef Name="Usr_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_MenuAccess">
+        <PropertyRef Name="Usr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyUser">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SECURITY_User" Role="SECURITY_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_User">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroupUser">
+    <End Type="eSuiteModel.SECURITY_UserGroup" Role="SECURITY_UserGroup" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SECURITY_User" Role="SECURITY_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SECURITY_UserGroup">
+        <PropertyRef Name="UsrGrp_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_User">
+        <PropertyRef Name="UsrGrp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyUserGroup">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SECURITY_UserGroup" Role="SECURITY_UserGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SECURITY_UserGroup">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CityCustomer">
+    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_Customer" Role="SETUP_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_City">
+        <PropertyRef Name="City_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Customer">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CitySalesAreaDetail">
+    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_SalesAreaDetail" Role="SETUP_SalesAreaDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_City">
+        <PropertyRef Name="City_Id" />
+      </Principal>
+      <Dependent Role="SETUP_SalesAreaDetail">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCity">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_City">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryCity">
+    <End Type="eSuiteModel.SETUP_Country" Role="SETUP_Country" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Country">
+        <PropertyRef Name="Cont_Id" />
+      </Principal>
+      <Dependent Role="SETUP_City">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCountry">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_Country" Role="SETUP_Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Country">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCustomer">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_Customer" Role="SETUP_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Customer">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCustomerDlvryAdd">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_CustomerDlvryAdd" Role="SETUP_CustomerDlvryAdd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_CustomerDlvryAdd">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCustomerType">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_CustomerType" Role="SETUP_CustomerType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_CustomerType">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyDepartment">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_Department" Role="SETUP_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Department">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyLocation">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_Location" Role="SETUP_Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Location">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyMenu">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SYS_Menu" Role="SYS_Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SYS_Menu">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyProductGroup">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_ProductGroup" Role="SETUP_ProductGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_ProductGroup">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanySalesArea">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_SalesArea" Role="SETUP_SalesArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_SalesArea">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyUnit">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_Unit" Role="SETUP_Unit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Unit">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryCustomer">
+    <End Type="eSuiteModel.SETUP_Country" Role="SETUP_Country" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_Customer" Role="SETUP_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Country">
+        <PropertyRef Name="Cont_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Customer">
+        <PropertyRef Name="Cont_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CstCustomerDlvryAdd">
+    <End Type="eSuiteModel.SETUP_Customer" Role="SETUP_Customer" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_CustomerDlvryAdd" Role="SETUP_CustomerDlvryAdd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Customer">
+        <PropertyRef Name="Cst_Id" />
+      </Principal>
+      <Dependent Role="SETUP_CustomerDlvryAdd">
+        <PropertyRef Name="Cst_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CstTypeCustomer">
+    <End Type="eSuiteModel.SETUP_CustomerType" Role="SETUP_CustomerType" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_Customer" Role="SETUP_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_CustomerType">
+        <PropertyRef Name="CstTyp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Customer">
+        <PropertyRef Name="CstTyp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesAreaDetail">
+    <End Type="eSuiteModel.SETUP_SalesArea" Role="SETUP_SalesArea" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_SalesAreaDetail" Role="SETUP_SalesAreaDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_SalesArea">
+        <PropertyRef Name="SalAr_Id" />
+      </Principal>
+      <Dependent Role="SETUP_SalesAreaDetail">
+        <PropertyRef Name="SalAr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

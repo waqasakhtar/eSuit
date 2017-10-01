@@ -1,0 +1,12 @@
+E:\Projects\eSuit\eSuit.Tests\bin\Debug\eSuit.Tests.dll.config
+E:\Projects\eSuit\eSuit.Tests\bin\Debug\eSuit.Tests.dll
+E:\Projects\eSuit\eSuit.Tests\bin\Debug\eSuit.Tests.pdb
+E:\Projects\eSuit\eSuit.Tests\bin\Debug\EntityFramework.dll
+E:\Projects\eSuit\eSuit.Tests\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\eSuit\eSuit.Tests\bin\Debug\eSuitRepository.dll
+E:\Projects\eSuit\eSuit.Tests\bin\Debug\EntityFramework.xml
+E:\Projects\eSuit\eSuit.Tests\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\eSuit\eSuit.Tests\bin\Debug\eSuitRepository.pdb
+E:\Projects\eSuit\eSuit.Tests\obj\Debug\eSuit.Tests.dll
+E:\Projects\eSuit\eSuit.Tests\obj\Debug\eSuit.Tests.pdb
+E:\Projects\eSuit\eSuit.Tests\obj\Debug\eSuit.Tests.csprojResolveAssemblyReference.cache

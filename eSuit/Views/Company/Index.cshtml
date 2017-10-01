@@ -55,8 +55,8 @@
                                         <tr>
                                             <td>@c.Comp_Code</td>
                                             <td>@(string.IsNullOrEmpty(c.Comp_ShortDesc) ? c.Comp_Desc : c.Comp_ShortDesc)</td>
-                                            <td>@(c.Comp_Status != null && c.Comp_Status == 0 ? "In-Active" : "Active")</td>
-                                            <td></td>
+                                            <td><span class="label @(c.Comp_Status != null && c.Comp_Status == 0 ? "label-danger" : "label-success")">@(c.Comp_Status != null && c.Comp_Status == 0 ? "In-Active" : "Active")</span></td>
+                                            <td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="View"><i class="zmdi zmdi-edit"></i></a> <a href="../Company/Delete/@c.Comp_Id" class="text-inverse" data-confirm title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
                                         </tr>
                                     }
 

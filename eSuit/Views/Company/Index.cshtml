@@ -4,21 +4,69 @@
     Layout = "~/Views/Shared/_MasterPage.cshtml";
 }
 
-<h2>Company List</h2>
-<table>
-    <thead>
-    <th>
-        Company Name
-    </th>
-    </thead>
-    <tbody>
-        @foreach (var c in Model)
-        {
-            <tr>
-                <td>
-                    @c.Comp_Desc
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<!-- Title -->
+<div class="row heading-bg">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h5 class="txt-dark">Company - List</h5>
+    </div>
+    @*@Html.Partial("_BreadCrumb")*@
+</div>
+<!-- /Title -->
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="table-wrap">
+                        <div class="table-responsive">
+                            <table id="example" class="table table-hover display  pb-30">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Desc</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Desc</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (var c in Model)
+                                    {
+                                        //string contact = "";
+                                        //contact = string.Concat(contact, c.Comp_Phone1);
+                                        //if (!string.IsNullOrEmpty(contact) && !string.IsNullOrEmpty(c.Comp_Phone2))
+                                        //{
+                                        //    contact = string.Concat(contact, ",");
+                                        //}
+                                        //contact = string.Concat(contact, c.Comp_Phone2);
+                                        //if (!string.IsNullOrEmpty(contact) && !string.IsNullOrEmpty(c.Comp_Phone3))
+                                        //{
+                                        //    contact = string.Concat(contact, ",");
+                                        //}
+                                        //contact = string.Concat(contact, c.Comp_Phone3);
+                                        <tr>
+                                            <td>@c.Comp_Code</td>
+                                            <td>@(string.IsNullOrEmpty(c.Comp_ShortDesc) ? c.Comp_Desc : c.Comp_ShortDesc)</td>
+                                            <td>@(c.Comp_Status != null && c.Comp_Status == 0 ? "In-Active" : "Active")</td>
+                                            <td></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->

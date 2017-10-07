@@ -32,7 +32,7 @@ namespace eSuit.Tests.eSuitRepositoryTest
             mdlCompany.Comp_Mobile1 = "03104423653";
             mdlCompany.Comp_Address1 = "Test Address3";
             mdlCompany.Comp_Fax = "0000000003";
-            dpCompany.Updated(mdlCompany);
+            dpCompany.Update(mdlCompany);
         }
 
         [TestMethod]

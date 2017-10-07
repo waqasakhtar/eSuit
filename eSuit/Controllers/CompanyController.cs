@@ -40,6 +40,35 @@ namespace eSuit.Controllers
             }
         }
 
+        public ActionResult ViewDetail(int id)
+        {
+            Company dpCompany = new Company();
+            return View(dpCompany.Get(id));
+        }
+
+        public ActionResult Edit(int id, string message)
+        {
+            Company dpCompany = new Company();
+            return View(dpCompany.Get(id));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(SETUP_Company company)
+        {
+            Company dpCompany = new Company();
+            bool updated = dpCompany.Update(company);
+            if (updated)
+            {
+                return RedirectToAction("ViewDetail", "Company", new { id = company.Comp_Id });
+            }
+            else
+            {
+                TempData["error"] = "Opps! Somthing went wrong!";
+                return RedirectToAction("Edit", "Company", new { id = company.Comp_Id });
+            }
+        }
+
         public ActionResult Delete(int id)
         {
             Company dpCompany = new Company();

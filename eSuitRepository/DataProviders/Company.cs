@@ -39,7 +39,7 @@ namespace eSuitRepository.DataProviders
         /// </summary>
         /// <param name="company"></param>
         /// <returns>Returns true if updated successfully else returns false.</returns>
-        public bool Updated(SETUP_Company company)
+        public bool Update(SETUP_Company company)
         {
             using (eSuiteEntities db = new eSuiteEntities())
             {
@@ -109,7 +109,8 @@ namespace eSuitRepository.DataProviders
             {
                 try
                 {
-                    return db.SETUP_Company.ToList();
+                    var companyList = db.SETUP_Company.ToList();
+                    return companyList.OrderBy(c => Convert.ToInt32(c.Comp_SortOrder == null ? 0 : c.Comp_SortOrder)).ToList();
                 }
                 catch
                 {

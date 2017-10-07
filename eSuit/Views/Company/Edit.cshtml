@@ -1,0 +1,214 @@
+﻿@model eSuitRepository.DataModels.SETUP_Company
+
+@{
+    ViewBag.Title = "Company - Edit";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+
+<!-- Title -->
+<div class="row heading-bg">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h5 class="txt-dark">Company - Edit</h5>
+    </div>
+</div>
+<!-- /Title -->
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                @if (TempData["error"] != null)
+                {
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <i class="zmdi zmdi-block pr-15 pull-left"></i><p class="pull-left">@TempData["error"]</p>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="form-wrap">
+                                <form action="~/Company/Update" method="post" data-toggle="validator" role="form">
+                                    @Html.AntiForgeryToken()
+                                    @Html.Hidden("Comp_Id", Model.Comp_Id)
+                                    <div class="form-body">
+                                        <h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-local-store mr-10"></i>Company's Info</h6>
+                                        <hr class="light-grey-hr" />
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Code</label>
+                                                    <input type="text" id="Comp_Code" name="Comp_Code" value="@Model.Comp_Code" class="form-control" placeholder="Enter Code" data-error="Company code is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Short Description</label>
+                                                    <input type="text" id="Comp_ShortDesc" name="Comp_ShortDesc" value="@Model.Comp_ShortDesc" class="form-control" placeholder="Enter Short Description" data-error="Company's short description is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Description</label>
+                                                    <input type="text" id="Comp_Desc" name="Comp_Desc" value="@Model.Comp_Desc" class="form-control" placeholder="Enter Description" data-error="Company's full description is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Contact Person</label>
+                                                    <input type="text" id="Comp_ContactPerson" name="Comp_ContactPerson" value="@Model.Comp_ContactPerson" class="form-control" placeholder="Enter Name of Contact Person">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">NTN</label>
+                                                    <input type="text" id="Comp_NTN" name="Comp_NTN" value="@Model.Comp_NTN" class="form-control" placeholder="Enter NTN">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Email</label>
+                                                    <input type="email" id="Comp_EMail" name="Comp_EMail" value="@Model.Comp_EMail" class="form-control" placeholder="Enter Email Address" data-error="Email address is not in valid format!">
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Web Url</label>
+                                                    <input type="text" id="Comp_WEB" name="Comp_WEB" value="@Model.Comp_WEB" class="form-control" placeholder="Enter Web Site URL">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Fax</label>
+                                                    <input type="text" id="Comp_Fax" name="Comp_Fax" value="@Model.Comp_Fax" class="form-control" placeholder="Enter Fax Number">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Phone1</label>
+                                                    <input type="text" id="Comp_Phone1" name="Comp_Phone1" value="@Model.Comp_Phone1" class="form-control" placeholder="Enter Phone1">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Phone2</label>
+                                                    <input type="text" id="Comp_Phone2" name="Comp_Phone2" value="@Model.Comp_Phone2" class="form-control" placeholder="Enter Phone2">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Phone3</label>
+                                                    <input type="text" id="Comp_Phone3" name="Comp_Phone3" value="@Model.Comp_Phone3" class="form-control" placeholder="Enter Phone3">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Mobile1</label>
+                                                    <input type="text" id="Comp_Mobile1" name="Comp_Mobile1" value="@Model.Comp_Mobile1" class="form-control" placeholder="Enter Mobile1">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Mobile2</label>
+                                                    <input type="text" id="Comp_Mobile2" name="Comp_Mobile2" value="@Model.Comp_Mobile2" class="form-control" placeholder="Enter Mobile2">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Address1</label>
+                                                    <input type="text" id="Comp_Address1" name="Comp_Address1" value="@Model.Comp_Address1" class="form-control" placeholder="Enter Address Line1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Address2</label>
+                                                    <input type="text" id="Comp_Address2" name="Comp_Address2" value="@Model.Comp_Address2" class="form-control" placeholder="Enter Address Line2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Address3</label>
+                                                    <input type="text" id="Comp_Address3" name="Comp_Address3" value="@Model.Comp_Address3" class="form-control" placeholder="Enter Address Line3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Address4</label>
+                                                    <input type="text" id="Comp_Address4" name="Comp_Address4" value="@Model.Comp_Address4" class="form-control" placeholder="Enter Address Line4">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Status</label>
+                                                    <select id="Comp_Status" name="Comp_Status" class="form-control">
+                                                        <option value="1" @(Model.Comp_Status == null || Model.Comp_Status == 1 ? "selected" : "")>Active</option>
+                                                        <option value="0" @(Model.Comp_Status != null && Model.Comp_Status == 0 ? "selected" : "")>In-Active</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Sort Order</label>
+                                                    <input type="text" id="Comp_SortOrder" value="@Model.Comp_SortOrder" name="Comp_SortOrder" class="form-control" placeholder="Enter Sort Order">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                    </div>
+                                    <div class="form-actions mt-10">
+                                        <button type="submit" class="btn btn-success  mr-10"> Update</button>
+                                        <button type="button" onclick="window.location = '../ViewDetail/@Model.Comp_Id';" class="btn btn-default">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->

@@ -1,0 +1,272 @@
+﻿@model eSuitRepository.DataModels.SETUP_Company
+
+@{
+    ViewBag.Title = "Company - View Detail";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<!-- Title -->
+<div class="row heading-bg">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h5 class="txt-dark">Company - View Detail</h5>
+    </div>
+</div>
+<!-- /Title -->
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-wrap">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-body">
+                                        <h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-local-store mr-10"></i>Company's Info</h6>
+                                        <hr class="light-grey-hr" />
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Code:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_Code </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Short Description:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_ShortDesc </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!-- /Row -->
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Description:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static">
+                                                            @Model.Comp_Desc
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /Row -->
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Contact Person:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_ContactPerson </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">NTN:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_NTN </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!-- /Row -->
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Email:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_EMail </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Web Url:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_WEB </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Fax:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_Fax </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Phone1:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_Phone1</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!-- /Row -->
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Phone2:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_Phone2 </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Phone3:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_Phone3 </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Mobile1:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_Mobile1 </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Mobile2:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_Mobile2 </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!-- /Row -->
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Address1:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static">
+                                                            @Model.Comp_Address1
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /Row -->
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Address2:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static">
+                                                            @Model.Comp_Address2
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /Row -->
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Address3:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static">
+                                                            @Model.Comp_Address3
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /Row -->
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Address4:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static">
+                                                            @Model.Comp_Address4
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /Row -->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Status:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @(Model.Comp_Status != null && Model.Comp_Status == 0 ? "In-Active" : "Active") </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Sort Order:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static"> @Model.Comp_SortOrder </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!-- /Row -->
+
+                                    </div>
+                                    <div class="form-actions mt-10">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <div class="col-md-offset-3 col-md-9">
+                                                        <button type="button" onclick="window.location.href='../Edit/@Model.Comp_Id'" class="btn btn-info btn-icon left-icon  mr-10"> <i class="zmdi zmdi-edit"></i> <span>Edit</span></button>
+                                                        <button type="button" onclick="window.location.href='../'" class="btn btn-default">View List</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6"> </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->

@@ -4250,6 +4250,8 @@
     <Content Include="Views\Shared\_BreadCrumb.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
     <Content Include="Views\Company\Add.cshtml" />
+    <Content Include="Views\Company\ViewDetail.cshtml" />
+    <Content Include="Views\Company\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

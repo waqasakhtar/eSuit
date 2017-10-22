@@ -19,6 +19,6 @@ E:\Projects\eSuitGitRepo\eSuit\eSuit.Tests\bin\Debug\eSuitRepository.dll
 E:\Projects\eSuitGitRepo\eSuit\eSuit.Tests\bin\Debug\EntityFramework.xml
 E:\Projects\eSuitGitRepo\eSuit\eSuit.Tests\bin\Debug\EntityFramework.SqlServer.xml
 E:\Projects\eSuitGitRepo\eSuit\eSuit.Tests\bin\Debug\eSuitRepository.pdb
-E:\Projects\eSuitGitRepo\eSuit\eSuit.Tests\obj\Debug\eSuit.Tests.csprojResolveAssemblyReference.cache
 E:\Projects\eSuitGitRepo\eSuit\eSuit.Tests\obj\Debug\eSuit.Tests.dll
 E:\Projects\eSuitGitRepo\eSuit\eSuit.Tests\obj\Debug\eSuit.Tests.pdb
+E:\Projects\eSuitGitRepo\eSuit\eSuit.Tests\obj\Debug\eSuit.Tests.csprojResolveAssemblyReference.cache

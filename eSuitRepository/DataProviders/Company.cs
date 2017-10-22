@@ -118,5 +118,26 @@ namespace eSuitRepository.DataProviders
                 }
             }
         }
+
+        /// <summary>
+        /// Gets a list of all companies from database for dropdowns
+        /// </summary>
+        /// <param name="comp_Id"></param>
+        /// <returns>Returns a list of SETUP_Company object with only comp-id and description</returns>
+        public List<SETUP_Company> Dropdown()
+        {
+            using (eSuiteEntities db = new eSuiteEntities())
+            {
+                try
+                {
+                    var companyList = db.SETUP_Company.ToList().Select(c => new SETUP_Company() { Comp_Id = c.Comp_Id, Comp_ShortDesc = c.Comp_ShortDesc, Comp_SortOrder = c.Comp_SortOrder }).ToList();
+                    return companyList.OrderBy(c => Convert.ToInt32(c.Comp_SortOrder == null ? 0 : c.Comp_SortOrder)).ToList();
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

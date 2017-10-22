@@ -1,0 +1,60 @@
+﻿@model List<eSuitRepository.DataModels.SETUP_Country>
+@{
+    ViewBag.Title = "Country - List";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<!-- Title -->
+<div class="row heading-bg">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h5 class="txt-dark">Country - List</h5>
+    </div>
+    @*@Html.Partial("_BreadCrumb")*@
+</div>
+<!-- /Title -->
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="table-wrap">
+                        <div class="table-responsive">
+                            <table id="example" class="table table-hover display  pb-30">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Desc</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Desc</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (var c in Model)
+                                    {
+                                        <tr>
+                                            <td>@c.Cont_Code</td>
+                                            <td>@(string.IsNullOrEmpty(c.Cont_Desc) ? c.Cont_Desc : c.Cont_ShortDesc)</td>
+                                            <td><span class="label @(c.Cont_Status != null && c.Cont_Status == 0 ? "label-danger" : "label-success")">@(c.Cont_Status != null && c.Cont_Status == 0 ? "In-Active" : "Active")</span></td>
+                                            <td><a href="~/Country/ViewDetail/@c.Cont_Id" class="pr-10" data-toggle="tooltip" title="View"><i class="zmdi zmdi-edit"></i></a> <a href="../Country/Delete/@c.Cont_Id" class="text-inverse" data-confirm title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->

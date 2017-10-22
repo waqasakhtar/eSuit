@@ -55,5 +55,12 @@ namespace eSuit.Tests.eSuitRepositoryTest
             Company dpCompany = new Company();
             Console.WriteLine(dpCompany.List().Count);
         }
+
+        [TestMethod]
+        public void Dropdown_Ut()
+        {
+            Company dpCompany = new Company();
+            Console.WriteLine(dpCompany.Dropdown().Count);
+        }
     }
 }

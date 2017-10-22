@@ -1,0 +1,124 @@
+﻿@model eSuitRepository.DataModels.SETUP_Country
+
+@{
+    ViewBag.Title = "Country - Add";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+
+<!-- Title -->
+<div class="row heading-bg">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h5 class="txt-dark">Country - Add</h5>
+    </div>
+</div>
+<!-- /Title -->
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                @if (TempData["error"] != null)
+                {
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <i class="zmdi zmdi-block pr-15 pull-left"></i><p class="pull-left">@TempData["error"]</p>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="form-wrap">
+                                <form action="~/Country/Add" method="post" data-toggle="validator" role="form">
+                                    @Html.AntiForgeryToken()
+                                    <div class="form-body">
+                                        <h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-local-store mr-10"></i>Country's Info</h6>
+                                        <hr class="light-grey-hr" />
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Company</label>
+                                                    <select id="Comp_Id" name="Comp_Id" class="form-control">
+                                                        <option>Select Company</option>
+                                                        @foreach (var comp in ViewBag.ddlCompany)
+                                                        {
+                                                            <option value="@comp.Comp_Id">@comp.Comp_ShortDesc</option>
+                                                        }
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Code</label>
+                                                    <input type="text" id="Cont_Code" name="Cont_Code" class="form-control" placeholder="Enter Code" data-error="Country code is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Continent</label>
+                                                    <input type="text" id="Cont_Continent" name="Cont_Continent" class="form-control" placeholder="Enter Continent" data-error="Country's continent is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Short Description</label>
+                                                    <input type="text" id="Cont_ShortDesc" name="Cont_ShortDesc" class="form-control" placeholder="Enter Short Description" data-error="Country's short description is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Description</label>
+                                                    <input type="text" id="Cont_Desc" name="Cont_Desc" class="form-control" placeholder="Enter Description" data-error="Country's full description is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Status</label>
+                                                    <select id="Cont_Status" name="Cont_Status" class="form-control">
+                                                        <option value="1">Active</option>
+                                                        <option value="0">In-Active</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Sort Order</label>
+                                                    <input type="text" id="Cont_SortOrder" name="Cont_SortOrder" class="form-control" placeholder="Enter Sort Order">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                    </div>
+                                    <div class="form-actions mt-10">
+                                        <button type="submit" class="btn btn-success  mr-10"> Save</button>
+                                        <button type="button" onclick="window.location = '../Country';" class="btn btn-default">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->

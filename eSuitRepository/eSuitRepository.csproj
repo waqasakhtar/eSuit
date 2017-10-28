@@ -63,6 +63,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>eSuitData.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DataModels\eSuitData1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eSuitData.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModels\SECURITY_MenuAccess.cs">
       <DependentUpon>eSuitData.tt</DependentUpon>
     </Compile>
@@ -115,6 +120,7 @@
       <DependentUpon>eSuitData.tt</DependentUpon>
     </Compile>
     <Compile Include="DataProviders\Country.cs" />
+    <Compile Include="DataProviders\City.cs" />
     <Compile Include="DataProviders\Department.cs" />
     <Compile Include="DataProviders\Company.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,7 +147,7 @@
     <None Include="DataModels\eSuitData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>eSuitData.edmx</DependentUpon>
-      <LastGenOutput>eSuitData.cs</LastGenOutput>
+      <LastGenOutput>eSuitData1.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

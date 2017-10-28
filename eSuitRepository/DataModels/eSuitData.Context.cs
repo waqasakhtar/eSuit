@@ -28,7 +28,6 @@ namespace eSuitRepository.DataModels
         public virtual DbSet<SECURITY_MenuAccess> SECURITY_MenuAccess { get; set; }
         public virtual DbSet<SECURITY_User> SECURITY_User { get; set; }
         public virtual DbSet<SECURITY_UserGroup> SECURITY_UserGroup { get; set; }
-        public virtual DbSet<SETUP_City> SETUP_City { get; set; }
         public virtual DbSet<SETUP_Company> SETUP_Company { get; set; }
         public virtual DbSet<SETUP_Country> SETUP_Country { get; set; }
         public virtual DbSet<SETUP_Customer> SETUP_Customer { get; set; }
@@ -42,5 +41,6 @@ namespace eSuitRepository.DataModels
         public virtual DbSet<SETUP_Unit> SETUP_Unit { get; set; }
         public virtual DbSet<SYS_Menu> SYS_Menu { get; set; }
         public virtual DbSet<SYS_Parameter> SYS_Parameter { get; set; }
+        public virtual DbSet<SETUP_City> SETUP_City { get; set; }
     }
 }

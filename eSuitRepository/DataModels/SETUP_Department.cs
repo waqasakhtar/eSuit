@@ -11,7 +11,7 @@ namespace eSuitRepository.DataModels
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class SETUP_Department
     {
         public int Dep_Id { get; set; }
@@ -30,7 +30,7 @@ namespace eSuitRepository.DataModels
         public string Dep_Fax { get; set; }
         public string Dep_EMail { get; set; }
         public string Dep_ContactPerson { get; set; }
-
+    
         public virtual SETUP_Company SETUP_Company { get; set; }
     }
 }

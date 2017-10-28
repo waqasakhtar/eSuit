@@ -63,3 +63,4 @@ E:\Projects\eSuitGitRepo\eSuit\eSuit\bin\System.Web.Http.xml
 E:\Projects\eSuitGitRepo\eSuit\eSuit\bin\System.Web.Http.WebHost.xml
 E:\Projects\eSuitGitRepo\eSuit\eSuit\obj\Debug\eSuit.dll
 E:\Projects\eSuitGitRepo\eSuit\eSuit\obj\Debug\eSuit.pdb
+E:\Projects\eSuitGitRepo\eSuit\eSuit\obj\Debug\eSuit.csprojResolveAssemblyReference.cache

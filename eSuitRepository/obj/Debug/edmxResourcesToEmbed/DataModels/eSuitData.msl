@@ -42,20 +42,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SETUP_City">
-      <EntityTypeMapping TypeName="eSuiteModel.SETUP_City">
-        <MappingFragment StoreEntitySet="SETUP_City">
-          <ScalarProperty Name="City_SortOrder" ColumnName="City_SortOrder" />
-          <ScalarProperty Name="City_Status" ColumnName="City_Status" />
-          <ScalarProperty Name="City_ShortDesc" ColumnName="City_ShortDesc" />
-          <ScalarProperty Name="City_Desc" ColumnName="City_Desc" />
-          <ScalarProperty Name="Cont_Id" ColumnName="Cont_Id" />
-          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
-          <ScalarProperty Name="City_Code" ColumnName="City_Code" />
-          <ScalarProperty Name="City_Id" ColumnName="City_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SETUP_Company">
       <EntityTypeMapping TypeName="eSuiteModel.SETUP_Company">
         <MappingFragment StoreEntitySet="SETUP_Company">
@@ -283,6 +269,20 @@
           <ScalarProperty Name="SPara_Desc" ColumnName="SPara_Desc" />
           <ScalarProperty Name="SPara_Code" ColumnName="SPara_Code" />
           <ScalarProperty Name="SPara_Id" ColumnName="SPara_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETUP_City">
+      <EntityTypeMapping TypeName="eSuiteModel.SETUP_City">
+        <MappingFragment StoreEntitySet="SETUP_City">
+          <ScalarProperty Name="City_SortOrder" ColumnName="City_SortOrder" />
+          <ScalarProperty Name="City_Status" ColumnName="City_Status" />
+          <ScalarProperty Name="City_ShortDesc" ColumnName="City_ShortDesc" />
+          <ScalarProperty Name="City_Desc" ColumnName="City_Desc" />
+          <ScalarProperty Name="Cont_Id" ColumnName="Cont_Id" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+          <ScalarProperty Name="City_Code" ColumnName="City_Code" />
+          <ScalarProperty Name="City_Id" ColumnName="City_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -16,8 +16,8 @@ namespace eSuitRepository.DataModels
     {
         public SETUP_Country()
         {
-            this.SETUP_City = new HashSet<SETUP_City>();
             this.SETUP_Customer = new HashSet<SETUP_Customer>();
+            this.SETUP_City = new HashSet<SETUP_City>();
         }
     
         public int Cont_Id { get; set; }
@@ -29,8 +29,8 @@ namespace eSuitRepository.DataModels
         public Nullable<int> Cont_Status { get; set; }
         public Nullable<int> Cont_SortOrder { get; set; }
     
-        public virtual ICollection<SETUP_City> SETUP_City { get; set; }
         public virtual SETUP_Company SETUP_Company { get; set; }
         public virtual ICollection<SETUP_Customer> SETUP_Customer { get; set; }
+        public virtual ICollection<SETUP_City> SETUP_City { get; set; }
     }
 }

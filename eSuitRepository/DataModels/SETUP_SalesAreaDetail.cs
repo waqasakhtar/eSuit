@@ -19,7 +19,7 @@ namespace eSuitRepository.DataModels
         public Nullable<int> City_Id { get; set; }
         public Nullable<int> SalArDtl_Status { get; set; }
     
-        public virtual SETUP_City SETUP_City { get; set; }
         public virtual SETUP_SalesArea SETUP_SalesArea { get; set; }
+        public virtual SETUP_City SETUP_City { get; set; }
     }
 }

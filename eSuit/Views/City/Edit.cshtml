@@ -1,0 +1,131 @@
+﻿@model eSuitRepository.DataModels.SETUP_City
+
+@{
+    ViewBag.Title = "City - Edit";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+
+<!-- Title -->
+<div class="row heading-bg">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h5 class="txt-dark">City - Edit</h5>
+    </div>
+</div>
+<!-- /Title -->
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                @if (TempData["error"] != null)
+                {
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <i class="zmdi zmdi-block pr-15 pull-left"></i><p class="pull-left">@TempData["error"]</p>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="form-wrap">
+                                <form action="~/City/Update" method="post" data-toggle="validator" role="form">
+                                    @Html.AntiForgeryToken()
+                                    @Html.Hidden("City_Id", Model.City_Id)
+                                    <div class="form-body">
+                                        <h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-local-store mr-10"></i>City's Info</h6>
+                                        <hr class="light-grey-hr" />
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Company</label>
+                                                    <select id="Comp_Id" name="Comp_Id" class="form-control">
+                                                        <option>Select Company</option>
+                                                        @foreach (var comp in ViewBag.ddlCompany)
+                                                        {
+                                                            <option value="@comp.Comp_Id" @(Model.Comp_Id != null && Model.Comp_Id == comp.Comp_Id ? "selected" : "")>@comp.Comp_ShortDesc</option>
+                                                        }
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Country</label>
+                                                    <select id="Cont_Id" name="Cont_Id" class="form-control">
+                                                        <option>Select Country</option>
+                                                        @foreach (var cont in ViewBag.ddlCountry)
+                                                        {
+                                                            <option value="@cont.Cont_Id" @(Model.Cont_Id != null && Model.Cont_Id == cont.Cont_Id ? "selected" : "")>@cont.Cont_ShortDesc</option>
+                                                        }
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Code</label>
+                                                    <input type="text" id="City_Code" name="City_Code" value="@Model.City_Code" class="form-control" placeholder="Enter Code" data-error="City code is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Short Description</label>
+                                                    <input type="text" id="City_ShortDesc" name="City_ShortDesc" value="@Model.City_ShortDesc" class="form-control" placeholder="Enter Short Description" data-error="City's short description is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Description</label>
+                                                    <input type="text" id="City_Desc" name="City_Desc" value="@Model.City_Desc" class="form-control" placeholder="Enter Description" data-error="City's full description is required!" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Status</label>
+                                                    <select id="City_Status" name="City_Status" class="form-control">
+                                                        <option value="1" @(Model.City_Status == null || Model.City_Status == 1 ? "selected" : "")>Active</option>
+                                                        <option value="0" @(Model.City_Status != null && Model.City_Status == 0 ? "selected" : "")>In-Active</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Sort Order</label>
+                                                    <input type="text" id="City_SortOrder" value="@Model.City_SortOrder" name="City_SortOrder" class="form-control" placeholder="Enter Sort Order">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                    </div>
+                                    <div class="form-actions mt-10">
+                                        <button type="submit" class="btn btn-success  mr-10"> Update</button>
+                                        <button type="button" onclick="window.location = '../ViewDetail/@Model.City_Id';" class="btn btn-default">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->

@@ -4,7 +4,6 @@
     <EntitySet Name="SECURITY_MenuAccess" EntityType="eSuiteModel.SECURITY_MenuAccess" />
     <EntitySet Name="SECURITY_User" EntityType="eSuiteModel.SECURITY_User" />
     <EntitySet Name="SECURITY_UserGroup" EntityType="eSuiteModel.SECURITY_UserGroup" />
-    <EntitySet Name="SETUP_City" EntityType="eSuiteModel.SETUP_City" />
     <EntitySet Name="SETUP_Company" EntityType="eSuiteModel.SETUP_Company" />
     <EntitySet Name="SETUP_Country" EntityType="eSuiteModel.SETUP_Country" />
     <EntitySet Name="SETUP_Customer" EntityType="eSuiteModel.SETUP_Customer" />
@@ -41,22 +40,6 @@
     <AssociationSet Name="FK_CompanyUserGroup" Association="eSuiteModel.FK_CompanyUserGroup">
       <End Role="SETUP_Company" EntitySet="SETUP_Company" />
       <End Role="SECURITY_UserGroup" EntitySet="SECURITY_UserGroup" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CityCustomer" Association="eSuiteModel.FK_CityCustomer">
-      <End Role="SETUP_City" EntitySet="SETUP_City" />
-      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CitySalesAreaDetail" Association="eSuiteModel.FK_CitySalesAreaDetail">
-      <End Role="SETUP_City" EntitySet="SETUP_City" />
-      <End Role="SETUP_SalesAreaDetail" EntitySet="SETUP_SalesAreaDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CompanyCity" Association="eSuiteModel.FK_CompanyCity">
-      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
-      <End Role="SETUP_City" EntitySet="SETUP_City" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CountryCity" Association="eSuiteModel.FK_CountryCity">
-      <End Role="SETUP_Country" EntitySet="SETUP_Country" />
-      <End Role="SETUP_City" EntitySet="SETUP_City" />
     </AssociationSet>
     <AssociationSet Name="FK_CompanyCountry" Association="eSuiteModel.FK_CompanyCountry">
       <End Role="SETUP_Company" EntitySet="SETUP_Company" />
@@ -114,6 +97,23 @@
       <End Role="SETUP_SalesArea" EntitySet="SETUP_SalesArea" />
       <End Role="SETUP_SalesAreaDetail" EntitySet="SETUP_SalesAreaDetail" />
     </AssociationSet>
+    <EntitySet Name="SETUP_City" EntityType="eSuiteModel.SETUP_City" />
+    <AssociationSet Name="FK_CityCustomer" Association="eSuiteModel.FK_CityCustomer">
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+      <End Role="SETUP_Customer" EntitySet="SETUP_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CitySalesAreaDetail" Association="eSuiteModel.FK_CitySalesAreaDetail">
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+      <End Role="SETUP_SalesAreaDetail" EntitySet="SETUP_SalesAreaDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCity" Association="eSuiteModel.FK_CompanyCity">
+      <End Role="SETUP_Company" EntitySet="SETUP_Company" />
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryCity" Association="eSuiteModel.FK_CountryCity">
+      <End Role="SETUP_Country" EntitySet="SETUP_Country" />
+      <End Role="SETUP_City" EntitySet="SETUP_City" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="SECURITY_MenuAccess">
     <Key>
@@ -161,23 +161,6 @@
     <NavigationProperty Name="SECURITY_User" Relationship="eSuiteModel.FK_UserGroupUser" FromRole="SECURITY_UserGroup" ToRole="SECURITY_User" />
     <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyUserGroup" FromRole="SECURITY_UserGroup" ToRole="SETUP_Company" />
   </EntityType>
-  <EntityType Name="SETUP_City">
-    <Key>
-      <PropertyRef Name="City_Id" />
-    </Key>
-    <Property Name="City_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="City_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Comp_Id" Type="Int32" />
-    <Property Name="Cont_Id" Type="Int32" />
-    <Property Name="City_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <Property Name="City_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="City_Status" Type="Int32" />
-    <Property Name="City_SortOrder" Type="Int32" />
-    <NavigationProperty Name="SETUP_Customer" Relationship="eSuiteModel.FK_CityCustomer" FromRole="SETUP_City" ToRole="SETUP_Customer" />
-    <NavigationProperty Name="SETUP_SalesAreaDetail" Relationship="eSuiteModel.FK_CitySalesAreaDetail" FromRole="SETUP_City" ToRole="SETUP_SalesAreaDetail" />
-    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyCity" FromRole="SETUP_City" ToRole="SETUP_Company" />
-    <NavigationProperty Name="SETUP_Country" Relationship="eSuiteModel.FK_CountryCity" FromRole="SETUP_City" ToRole="SETUP_Country" />
-  </EntityType>
   <EntityType Name="SETUP_Company">
     <Key>
       <PropertyRef Name="Comp_Id" />
@@ -205,7 +188,6 @@
     <NavigationProperty Name="SECURITY_MenuAccess" Relationship="eSuiteModel.FK_CompanyMenuAccess" FromRole="SETUP_Company" ToRole="SECURITY_MenuAccess" />
     <NavigationProperty Name="SECURITY_User" Relationship="eSuiteModel.FK_CompanyUser" FromRole="SETUP_Company" ToRole="SECURITY_User" />
     <NavigationProperty Name="SECURITY_UserGroup" Relationship="eSuiteModel.FK_CompanyUserGroup" FromRole="SETUP_Company" ToRole="SECURITY_UserGroup" />
-    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CompanyCity" FromRole="SETUP_Company" ToRole="SETUP_City" />
     <NavigationProperty Name="SETUP_Country" Relationship="eSuiteModel.FK_CompanyCountry" FromRole="SETUP_Company" ToRole="SETUP_Country" />
     <NavigationProperty Name="SETUP_Customer" Relationship="eSuiteModel.FK_CompanyCustomer" FromRole="SETUP_Company" ToRole="SETUP_Customer" />
     <NavigationProperty Name="SETUP_CustomerDlvryAdd" Relationship="eSuiteModel.FK_CompanyCustomerDlvryAdd" FromRole="SETUP_Company" ToRole="SETUP_CustomerDlvryAdd" />
@@ -216,6 +198,7 @@
     <NavigationProperty Name="SETUP_ProductGroup" Relationship="eSuiteModel.FK_CompanyProductGroup" FromRole="SETUP_Company" ToRole="SETUP_ProductGroup" />
     <NavigationProperty Name="SETUP_SalesArea" Relationship="eSuiteModel.FK_CompanySalesArea" FromRole="SETUP_Company" ToRole="SETUP_SalesArea" />
     <NavigationProperty Name="SETUP_Unit" Relationship="eSuiteModel.FK_CompanyUnit" FromRole="SETUP_Company" ToRole="SETUP_Unit" />
+    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CompanyCity" FromRole="SETUP_Company" ToRole="SETUP_City" />
   </EntityType>
   <EntityType Name="SETUP_Country">
     <Key>
@@ -229,9 +212,9 @@
     <Property Name="Cont_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Cont_Status" Type="Int32" />
     <Property Name="Cont_SortOrder" Type="Int32" />
-    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CountryCity" FromRole="SETUP_Country" ToRole="SETUP_City" />
     <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyCountry" FromRole="SETUP_Country" ToRole="SETUP_Company" />
     <NavigationProperty Name="SETUP_Customer" Relationship="eSuiteModel.FK_CountryCustomer" FromRole="SETUP_Country" ToRole="SETUP_Customer" />
+    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CountryCity" FromRole="SETUP_Country" ToRole="SETUP_City" />
   </EntityType>
   <EntityType Name="SETUP_Customer">
     <Key>
@@ -257,11 +240,11 @@
     <Property Name="Cst_EMail" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="Cst_ContactPerson" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="Cst_Status" Type="Int32" />
-    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CityCustomer" FromRole="SETUP_Customer" ToRole="SETUP_City" />
     <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyCustomer" FromRole="SETUP_Customer" ToRole="SETUP_Company" />
     <NavigationProperty Name="SETUP_Country" Relationship="eSuiteModel.FK_CountryCustomer" FromRole="SETUP_Customer" ToRole="SETUP_Country" />
     <NavigationProperty Name="SETUP_CustomerDlvryAdd" Relationship="eSuiteModel.FK_CstCustomerDlvryAdd" FromRole="SETUP_Customer" ToRole="SETUP_CustomerDlvryAdd" />
     <NavigationProperty Name="SETUP_CustomerType" Relationship="eSuiteModel.FK_CstTypeCustomer" FromRole="SETUP_Customer" ToRole="SETUP_CustomerType" />
+    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CityCustomer" FromRole="SETUP_Customer" ToRole="SETUP_City" />
   </EntityType>
   <EntityType Name="SETUP_CustomerDlvryAdd">
     <Key>
@@ -386,8 +369,8 @@
     <Property Name="SalAr_Id" Type="Int32" />
     <Property Name="City_Id" Type="Int32" />
     <Property Name="SalArDtl_Status" Type="Int32" />
-    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CitySalesAreaDetail" FromRole="SETUP_SalesAreaDetail" ToRole="SETUP_City" />
     <NavigationProperty Name="SETUP_SalesArea" Relationship="eSuiteModel.FK_SalesAreaDetail" FromRole="SETUP_SalesAreaDetail" ToRole="SETUP_SalesArea" />
+    <NavigationProperty Name="SETUP_City" Relationship="eSuiteModel.FK_CitySalesAreaDetail" FromRole="SETUP_SalesAreaDetail" ToRole="SETUP_City" />
   </EntityType>
   <EntityType Name="SETUP_Unit">
     <Key>
@@ -499,54 +482,6 @@
         <PropertyRef Name="Comp_Id" />
       </Principal>
       <Dependent Role="SECURITY_UserGroup">
-        <PropertyRef Name="Comp_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CityCustomer">
-    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="0..1" />
-    <End Type="eSuiteModel.SETUP_Customer" Role="SETUP_Customer" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SETUP_City">
-        <PropertyRef Name="City_Id" />
-      </Principal>
-      <Dependent Role="SETUP_Customer">
-        <PropertyRef Name="City_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CitySalesAreaDetail">
-    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="0..1" />
-    <End Type="eSuiteModel.SETUP_SalesAreaDetail" Role="SETUP_SalesAreaDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SETUP_City">
-        <PropertyRef Name="City_Id" />
-      </Principal>
-      <Dependent Role="SETUP_SalesAreaDetail">
-        <PropertyRef Name="City_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CompanyCity">
-    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
-    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SETUP_Company">
-        <PropertyRef Name="Comp_Id" />
-      </Principal>
-      <Dependent Role="SETUP_City">
-        <PropertyRef Name="Comp_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CountryCity">
-    <End Type="eSuiteModel.SETUP_Country" Role="SETUP_Country" Multiplicity="0..1" />
-    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SETUP_Country">
-        <PropertyRef Name="Cont_Id" />
-      </Principal>
-      <Dependent Role="SETUP_City">
         <PropertyRef Name="Comp_Id" />
       </Dependent>
     </ReferentialConstraint>
@@ -716,6 +651,71 @@
       </Principal>
       <Dependent Role="SETUP_SalesAreaDetail">
         <PropertyRef Name="SalAr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SETUP_City">
+    <Key>
+      <PropertyRef Name="City_Id" />
+    </Key>
+    <Property Name="City_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Id" Type="Int32" />
+    <Property Name="Cont_Id" Type="Int32" />
+    <Property Name="City_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="City_ShortDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City_Status" Type="Int32" />
+    <Property Name="City_SortOrder" Type="Int32" />
+    <NavigationProperty Name="SETUP_Customer" Relationship="eSuiteModel.FK_CityCustomer" FromRole="SETUP_City" ToRole="SETUP_Customer" />
+    <NavigationProperty Name="SETUP_SalesAreaDetail" Relationship="eSuiteModel.FK_CitySalesAreaDetail" FromRole="SETUP_City" ToRole="SETUP_SalesAreaDetail" />
+    <NavigationProperty Name="SETUP_Company" Relationship="eSuiteModel.FK_CompanyCity" FromRole="SETUP_City" ToRole="SETUP_Company" />
+    <NavigationProperty Name="SETUP_Country" Relationship="eSuiteModel.FK_CountryCity" FromRole="SETUP_City" ToRole="SETUP_Country" />
+  </EntityType>
+  <Association Name="FK_CityCustomer">
+    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_Customer" Role="SETUP_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_City">
+        <PropertyRef Name="City_Id" />
+      </Principal>
+      <Dependent Role="SETUP_Customer">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CitySalesAreaDetail">
+    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_SalesAreaDetail" Role="SETUP_SalesAreaDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_City">
+        <PropertyRef Name="City_Id" />
+      </Principal>
+      <Dependent Role="SETUP_SalesAreaDetail">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCity">
+    <End Type="eSuiteModel.SETUP_Company" Role="SETUP_Company" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Company">
+        <PropertyRef Name="Comp_Id" />
+      </Principal>
+      <Dependent Role="SETUP_City">
+        <PropertyRef Name="Comp_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryCity">
+    <End Type="eSuiteModel.SETUP_Country" Role="SETUP_Country" Multiplicity="0..1" />
+    <End Type="eSuiteModel.SETUP_City" Role="SETUP_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SETUP_Country">
+        <PropertyRef Name="Cont_Id" />
+      </Principal>
+      <Dependent Role="SETUP_City">
+        <PropertyRef Name="Cont_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

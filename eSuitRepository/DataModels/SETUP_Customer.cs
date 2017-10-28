@@ -40,10 +40,10 @@ namespace eSuitRepository.DataModels
         public string Cst_ContactPerson { get; set; }
         public Nullable<int> Cst_Status { get; set; }
     
-        public virtual SETUP_City SETUP_City { get; set; }
         public virtual SETUP_Company SETUP_Company { get; set; }
         public virtual SETUP_Country SETUP_Country { get; set; }
         public virtual ICollection<SETUP_CustomerDlvryAdd> SETUP_CustomerDlvryAdd { get; set; }
         public virtual SETUP_CustomerType SETUP_CustomerType { get; set; }
+        public virtual SETUP_City SETUP_City { get; set; }
     }
 }

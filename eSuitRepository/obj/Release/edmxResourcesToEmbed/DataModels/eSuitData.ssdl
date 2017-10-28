@@ -468,7 +468,7 @@
         <PropertyRef Name="Cont_Id" />
       </Principal>
       <Dependent Role="SETUP_City">
-        <PropertyRef Name="Comp_Id" />
+        <PropertyRef Name="Cont_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

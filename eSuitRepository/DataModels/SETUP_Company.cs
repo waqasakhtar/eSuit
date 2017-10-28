@@ -19,7 +19,6 @@ namespace eSuitRepository.DataModels
             this.SECURITY_MenuAccess = new HashSet<SECURITY_MenuAccess>();
             this.SECURITY_User = new HashSet<SECURITY_User>();
             this.SECURITY_UserGroup = new HashSet<SECURITY_UserGroup>();
-            this.SETUP_City = new HashSet<SETUP_City>();
             this.SETUP_Country = new HashSet<SETUP_Country>();
             this.SETUP_Customer = new HashSet<SETUP_Customer>();
             this.SETUP_CustomerDlvryAdd = new HashSet<SETUP_CustomerDlvryAdd>();
@@ -30,6 +29,7 @@ namespace eSuitRepository.DataModels
             this.SETUP_ProductGroup = new HashSet<SETUP_ProductGroup>();
             this.SETUP_SalesArea = new HashSet<SETUP_SalesArea>();
             this.SETUP_Unit = new HashSet<SETUP_Unit>();
+            this.SETUP_City = new HashSet<SETUP_City>();
         }
     
         public int Comp_Id { get; set; }
@@ -56,7 +56,6 @@ namespace eSuitRepository.DataModels
         public virtual ICollection<SECURITY_MenuAccess> SECURITY_MenuAccess { get; set; }
         public virtual ICollection<SECURITY_User> SECURITY_User { get; set; }
         public virtual ICollection<SECURITY_UserGroup> SECURITY_UserGroup { get; set; }
-        public virtual ICollection<SETUP_City> SETUP_City { get; set; }
         public virtual ICollection<SETUP_Country> SETUP_Country { get; set; }
         public virtual ICollection<SETUP_Customer> SETUP_Customer { get; set; }
         public virtual ICollection<SETUP_CustomerDlvryAdd> SETUP_CustomerDlvryAdd { get; set; }
@@ -67,5 +66,6 @@ namespace eSuitRepository.DataModels
         public virtual ICollection<SETUP_ProductGroup> SETUP_ProductGroup { get; set; }
         public virtual ICollection<SETUP_SalesArea> SETUP_SalesArea { get; set; }
         public virtual ICollection<SETUP_Unit> SETUP_Unit { get; set; }
+        public virtual ICollection<SETUP_City> SETUP_City { get; set; }
     }
 }

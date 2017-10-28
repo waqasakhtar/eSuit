@@ -99,20 +99,20 @@ namespace eSuitRepository.DataProviders
         }
 
         /// <summary>
-        /// Gets a list of all country / country based on country id from database
+        /// Gets a list of all country / country based on company id from database
         /// </summary>
         /// <param name="comp_Id"></param>
         /// <returns>Returns a list of SETUP_Country object</returns>
-        public List<SETUP_Country> List(int? cont_Id)
+        public List<SETUP_Country> List(int? comp_Id)
         {
             using (eSuiteEntities db = new eSuiteEntities())
             {
                 try
                 {
                     var countryList = db.SETUP_Country.Include("SETUP_Company").ToList();
-                    if (cont_Id != null && cont_Id > 0)
+                    if (comp_Id != null && comp_Id > 0)
                     {
-                        countryList = countryList.Where(d => d.Cont_Id == cont_Id).ToList();
+                        countryList = countryList.Where(d => d.Comp_Id == comp_Id).ToList();
                     }
                     return countryList.OrderBy(c => Convert.ToInt32(c.Cont_SortOrder == null ? 0 : c.Cont_SortOrder)).ToList();
                 }
@@ -122,5 +122,32 @@ namespace eSuitRepository.DataProviders
                 }
             }
         }
+
+
+        /// <summary>
+        /// Gets a list of all countries from database for dropdowns
+        /// </summary>
+        /// <param name="comp_Id"></param>
+        /// <returns>Returns a list of SETUP_Country object with only comp-id and description</returns>
+        public List<SETUP_Country> Dropdown(int? comp_Id)
+        {
+            using (eSuiteEntities db = new eSuiteEntities())
+            {
+                try
+                {
+                    var countryList = db.SETUP_Country.ToList().Select(c => new SETUP_Country() { Comp_Id = c.Comp_Id, Cont_Id = c.Cont_Id, Cont_ShortDesc = c.Cont_ShortDesc, Cont_SortOrder = c.Cont_SortOrder }).ToList();
+                    if (comp_Id != null && comp_Id > 0)
+                    {
+                        countryList = countryList.Where(d => d.Comp_Id == comp_Id).ToList();
+                    }
+                    return countryList.OrderBy(c => Convert.ToInt32(c.Cont_SortOrder == null ? 0 : c.Cont_SortOrder)).ToList();
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
     }
 }
